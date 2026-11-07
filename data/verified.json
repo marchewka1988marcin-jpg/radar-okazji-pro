@@ -42,9 +42,23 @@
       "description": "Etap przygotowawczy, nie licytacja. Ukończenie opisu i oszacowania 09.11.2026. Dotyczy udziałów w nieruchomości.",
       "query": "Komornik — oficjalne obwieszczenie",
       "verified_at": "2026-11-07"
+    },
+    {
+      "title": "Blachownia, ul. Wręczycka 17 — dom i działka, I e-licytacja",
+      "url": "https://licytacje.komornik.pl/wyszukiwarka/obwieszczenia-o-licytacji/59618/licytacja-nieruchomosci-nieruchomosc-gruntowa-zabudowana",
+      "description": "Działka 79/34, 1843 m²; cena wywołania 522 750 zł, oszacowanie 697 000 zł, rękojmia 69 700 zł do 07.12.2026; licytacja 09–16.12.2026. Oficjalne obwieszczenie.",
+      "query": "Licytacja — Blachownia",
+      "verified_at": "2026-11-07"
+    },
+    {
+      "title": "Kłobuck — działki 186 i 228, 6130 m², e-licytacja",
+      "url": "https://licytacje.komornik.pl/licytacje/92445/dzialki-ewidencyjne-186-228",
+      "description": "Cena wywołania 140 646,67 zł, rękojmia 21 097 zł do 08.12.2026; licytacja 10–17.12.2026. Oficjalny portal komorniczy.",
+      "query": "Licytacja — Kłobuck",
+      "verified_at": "2026-11-07"
     }
   ],
-  "status": "6 sprawdzonych obwieszczeń w oficjalnym portalu komorniczym. Automatyczne źródła uruchomione; nowe wyniki podlegają kontroli jakości.",
+  "status": "8 ogłoszeń sprawdzonych w źródłach urzędowych; dodatkowe źródła są testowane.",
   "source_health": {
     "queries": 18,
     "responding": 0,
