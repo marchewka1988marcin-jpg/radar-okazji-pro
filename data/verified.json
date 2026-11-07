@@ -37,13 +37,6 @@
       "verified_at": "2026-11-07"
     },
     {
-      "title": "Kłomnice, ul. Kolejowa — 7800 m², e-licytacja w toku",
-      "url": "https://licytacje.komornik.pl/wyszukiwarka/obwieszczenia-o-licytacji/57552/obwieszczenie-o-licytacji",
-      "description": "Licytacja 05–12.11.2026; termin wpłaty rękojmi minął 03.11. Cena wywoławcza 369 825 zł. Nie jest to nowa okazja do przystąpienia.",
-      "query": "Komornik — oficjalne obwieszczenie",
-      "verified_at": "2026-11-07"
-    },
-    {
       "title": "Częstochowa, ul. Konwaliowa 206 — opis i oszacowanie",
       "url": "https://licytacje.komornik.pl/wyszukiwarka/obwieszczenia-o-terminie-opisu-i-oszacowania/10206/prawo-wlasnosci-nieruchomosci",
       "description": "Etap przygotowawczy, nie licytacja. Ukończenie opisu i oszacowania 09.11.2026. Dotyczy udziałów w nieruchomości.",
@@ -51,7 +44,7 @@
       "verified_at": "2026-11-07"
     }
   ],
-  "status": "Oferty oficjalnie sprawdzone i tropy z wyszukiwarek. Przeszukano 18 zapytań; odpowiedzi z 0. Wyniki automatyczne wymagają weryfikacji. Nowych: 0.",
+  "status": "6 sprawdzonych obwieszczeń w oficjalnym portalu komorniczym. Automatyczne źródła uruchomione; nowe wyniki podlegają kontroli jakości.",
   "source_health": {
     "queries": 18,
     "responding": 0,
