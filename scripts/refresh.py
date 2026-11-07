@@ -102,6 +102,7 @@ def posrednik_listings():
    if not a or not title: continue
    location=meta.get_text(" ",strip=True) if meta else ""
    if not LOCAL.search(location+" "+title.get_text(" ",strip=True)): continue
+   if re.search(r"radomsko|zawiercie|katowice|sosnowiec|gliwice",location,re.I): continue
    link=urllib.parse.urljoin(url,a["href"])
    desc="Sprzedaż · "+(price.get_text(" ",strip=True) if price else "cena niepodana")+" · "+location
    yield {"title":title.get_text(" ",strip=True)[:180],"url":link,"description":desc[:380],"query":"Pośrednik — ogłoszenie sprzedaży","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
@@ -113,8 +114,12 @@ def main():
  original=data.get("offers",[])
  offers={o["url"]:o for o in original if o.get("verified_at")}
  discovered=0; worked=0
- for o in list(official_notices())+list(bailiff_office())+list(posrednik_listings()):
-  if o['url'] not in offers: offers[o['url']]=o; discovered+=1
+ source_counts={"komornik_portal":0,"kancelaria_czestochowa":0,"posrednik":0}
+ for name,fn in [("komornik_portal",official_notices),("kancelaria_czestochowa",bailiff_office),("posrednik",posrednik_listings)]:
+  hits=list(fn())
+  source_counts[name]=len(hits)
+  for o in hits:
+   if o["url"] not in offers: offers[o["url"]]=o; discovered+=1
  for q in QUERIES:
   hits=search(q)
   if hits: worked+=1
@@ -133,7 +138,7 @@ def main():
    try:
     if datetime.fromisoformat(o.get("discovered_at",""))>=cutoff: final.append(o)
    except ValueError: pass
- data.update({"updated_at":now.isoformat(),"offers":final[:250],"status":f"Oferty oficjalnie sprawdzone i tropy z wyszukiwarek. Przeszukano {len(QUERIES)} zapytań; odpowiedzi z {worked}. Wyniki automatyczne wymagają weryfikacji. Nowych: {discovered}.","source_health":{"queries":len(QUERIES),"responding":worked,"new":discovered}})
+ data.update({"updated_at":now.isoformat(),"offers":final[:250],"status":f"Bezpośrednie źródła: komornik {source_counts['komornik_portal']}, kancelaria {source_counts['kancelaria_czestochowa']}, Pośrednik {source_counts['posrednik']}. Wyszukiwarki RSS: {worked}/{len(QUERIES)}. Nowych: {discovered}. Weryfikuj u źródła.","source_health":{"queries":len(QUERIES),"responding":worked,"new":discovered,"direct_sources":source_counts}})
  OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  print(data["status"],"Total",len(final))
 if __name__=="__main__":main()
