@@ -26,10 +26,13 @@ QUERIES=[
  'site:licytacje.komornik.pl "Kłobuck" nieruchomości',
  'site:listaprzetargow.pl "Częstochowa" licytacje',
  'site:licytor.pl "Częstochowa" nieruchomość',
- 'site:krz.ms.gov.pl "Częstochowa" nieruchomość'
+ 'site:krz.ms.gov.pl "Częstochowa" nieruchomość',
+ 'site:olx.pl/d/oferta/ nieruchomości Częstochowa sprzedaż',
+ 'site:otodom.pl/pl/oferta/ Częstochowa działka dom mieszkanie',
+ 'site:posrednik.pl/listings/ Częstochowa sprzedaż'
 ]
 PROPERTY=re.compile(r"nieruchom|dzia[łl]k|lokal|mieszkan|dom\\b|grunt|licytac|przetarg|syndyk|komornik|zabudowan|budyn|kamienic|posesj|sprzeda[żz]",re.I)
-TRUSTED=re.compile(r"(?:licytacje\\.komornik\\.pl|listaprzetargow\\.pl|licytor\\.pl|adradar\\.pl|aukcjeskarbowe\\.pl|(?:^|\\.)bip\\.|(?:^|\\.)gov\\.pl|(?:^|\\.)kowa?nr?\\.gov\\.pl)",re.I)
+TRUSTED=re.compile(r"(?:olx\\.pl|otodom\\.pl|posrednik\\.pl|licytacje\\.komornik\\.pl|listaprzetargow\\.pl|licytor\\.pl|adradar\\.pl|aukcjeskarbowe\\.pl|(?:^|\\.)bip\\.|(?:^|\\.)gov\\.pl|(?:^|\\.)kowa?nr?\\.gov\\.pl)",re.I)
 LOCAL=re.compile(r"blachown|cz[eę]stochow|k[łl]obuck|konopisk|wr[eę]czyc|poczesn|myszk[oó]w|olsztyn|k[łl]omnic|koniecpol|herby|lubliniec|kozieg[łl]ow|poraj|mst[oó]w|przyr[oó]w|r[eę]dzin|kamienic[aey] polsk|jan[oó]w",re.I)
 HEAD={"User-Agent":"Mozilla/5.0 (compatible; RadarOkazji/1.0; public search discovery)"}
 def get_items(url):
@@ -83,13 +86,34 @@ def bailiff_office():
    yield {"title":title[:180],"url":a["href"],"description":"Komornik Częstochowa · "+details[:380],"query":"Licytacja — kancelaria komornicza Częstochowa","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
  except requests.RequestException as exc: print("bailiff office error",str(exc)[:120],file=sys.stderr)
 
+def posrednik_listings():
+ """Public sale cards from Pośrednik Częstochowa, not rental or swaps."""
+ url="https://posrednik.pl/nieruchomosci?sort=newest"
+ try:
+  r=requests.get(url,headers=HEAD,timeout=(5,18));r.raise_for_status()
+  soup=BeautifulSoup(r.text,"html.parser")
+  for card in soup.select("article.listing"):
+   category=card.select_one(".listing-category-line")
+   if not category or "Sprzedaż" not in category.get_text(" ",strip=True): continue
+   a=card.select_one("a.listing-body-link[href]")
+   title=card.select_one(".listing-title")
+   price=card.select_one(".listing-price")
+   meta=card.select_one(".listing-meta")
+   if not a or not title: continue
+   location=meta.get_text(" ",strip=True) if meta else ""
+   if not LOCAL.search(location+" "+title.get_text(" ",strip=True)): continue
+   link=urllib.parse.urljoin(url,a["href"])
+   desc="Sprzedaż · "+(price.get_text(" ",strip=True) if price else "cena niepodana")+" · "+location
+   yield {"title":title.get_text(" ",strip=True)[:180],"url":link,"description":desc[:380],"query":"Pośrednik — ogłoszenie sprzedaży","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
+ except requests.RequestException as exc: print("posrednik error",str(exc)[:120],file=sys.stderr)
+
 def main():
  data=json.loads(OUT.read_text(encoding="utf-8"))
  now=datetime.now(timezone.utc)
  original=data.get("offers",[])
  offers={o["url"]:o for o in original if o.get("verified_at")}
  discovered=0; worked=0
- for o in list(official_notices())+list(bailiff_office()):
+ for o in list(official_notices())+list(bailiff_office())+list(posrednik_listings()):
   if o['url'] not in offers: offers[o['url']]=o; discovered+=1
  for q in QUERIES:
   hits=search(q)
