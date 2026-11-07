@@ -4,6 +4,7 @@ import json, re, sys, time, hashlib, urllib.parse, xml.etree.ElementTree as ET
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 import requests
+from bs4 import BeautifulSoup
 
 OUT=Path("data/verified.json")
 PLACES=["Blachownia","Częstochowa","Kłobuck","Konopiska","Wręczyca Wielka","Poczesna","Myszków","Olsztyn śląskie","Kłomnice","Koniecpol","Herby","Lubliniec","Koziegłowy","Poraj","Mstów","Janów częstochowski","Przyrów","Rędziny","Kamienica Polska"]
@@ -50,12 +51,30 @@ def search(q):
    if items: return items
   except (requests.RequestException, ET.ParseError) as e: print("source unavailable",type(e).__name__,file=sys.stderr)
  return []
+def official_notices():
+ """Read public cards from the National Bailiffs Council website, no paywall."""
+ for kind in ["obwieszczenia-o-licytacji","obwieszczenia-o-terminie-opisu-i-oszacowania"]:
+  url="https://licytacje.komornik.pl/wyszukiwarka/"+kind
+  try:
+   r=requests.get(url,headers=HEAD,timeout=(5,18));r.raise_for_status()
+   soup=BeautifulSoup(r.text,"html.parser")
+   for a in soup.select("a.notice[href]"):
+    title=" ".join(a.stripped_strings)
+    link=a.get("href","")
+    if not link.startswith("https://licytacje.komornik.pl/"): continue
+    if not LOCAL.search(title): continue
+    stage="Licytacja" if kind=="obwieszczenia-o-licytacji" else "Opis i oszacowanie (przed licytacją)"
+    yield {"title":stage+" — "+title[:150],"url":link,"description":"Oficjalny portal komorniczy. "+title[:350],"query":"Komornik — oficjalne obwieszczenie","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
+  except requests.RequestException as exc: print("official source error",str(exc)[:120],file=sys.stderr)
+
 def main():
  data=json.loads(OUT.read_text(encoding="utf-8"))
  now=datetime.now(timezone.utc)
  original=data.get("offers",[])
  offers={o["url"]:o for o in original if o.get("verified_at")}
  discovered=0; worked=0
+ for o in official_notices():
+  if o['url'] not in offers: offers[o['url']]=o; discovered+=1
  for q in QUERIES:
   hits=search(q)
   if hits: worked+=1
