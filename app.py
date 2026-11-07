@@ -1,4 +1,4 @@
-import os, requests, threading, time, xml.etree.ElementTree as ET
+import os, requests, threading, time, json, xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from urllib.parse import urlencode
 from flask import Flask, jsonify, request, send_from_directory
@@ -10,7 +10,8 @@ QUERIES=[
  'KOWR przetarg nieruchomości śląskie Częstochowa',
  'komornik licytacja nieruchomości Częstochowa Myszków',
  'BIP sprzedaż działki Konopiska Wręczyca Wielka']
-cache={"updated_at":None,"offers":[],"status":"Trwa przygotowanie pierwszego wyszukiwania"}
+with open("data/verified.json",encoding="utf-8") as fp: cache=json.load(fp)
+cache["status"]="Zweryfikowane ogłoszenia ze źródeł urzędowych. Automatyczne wyszukiwanie: test."
 lock=threading.Lock()
 def fetch():
  offers={}
@@ -30,10 +31,14 @@ def fetch():
   except Exception as exc: errors.append(str(exc)[:120])
  return {"updated_at":datetime.now(timezone.utc).isoformat(),"offers":list(offers.values()),"status":("Znaleziono publiczne wyniki; zweryfikuj lokalizację i aktualność u źródła." if offers else ("Nie udało się pobrać wyników z publicznego RSS." if errors else "Publiczne źródło RSS nie zwróciło wyników.")),"errors":errors[:3]}
 def update():
- with lock:
-  cache["status"]="Trwa pobieranie danych z publicznych źródeł"
-  try: cache.update(fetch())
-  except Exception as exc: cache.update({"updated_at":datetime.now(timezone.utc).isoformat(),"offers":[],"status":"Błąd pobierania: "+str(exc)[:100]})
+ try:
+  result=fetch()
+  with lock:
+   old={o["url"]:o for o in cache["offers"]}
+   for offer in result["offers"]: old.setdefault(offer["url"],offer)
+   cache.update({"offers":list(old.values()),"updated_at":result["updated_at"],"status":("Wyniki publicznego RSS i zweryfikowane ogłoszenia." if result["offers"] else "Zweryfikowane ogłoszenia; RSS nie zwrócił nowych wyników. "+("; ".join(result["errors"])[:110] if result["errors"] else ""))})
+ except Exception as exc:
+  with lock: cache["status"]="Zweryfikowane ogłoszenia. Błąd RSS: "+str(exc)[:100]
 def background():
  while True:
   update()
