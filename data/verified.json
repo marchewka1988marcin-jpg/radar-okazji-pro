@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T21:57:34.389947+00:00",
+  "updated_at": "2026-11-07T22:00:50.455986+00:00",
   "offers": [
     {
       "title": "Częstochowa — grunt z budynkiem handlowo-usługowym, II e-licytacja",
@@ -63,7 +63,7 @@
       "description": "Komornik Częstochowa · Nieruchomość I licytacja Termin: 10.12.2026, 13:00 Cena wywołania: 290 880,00 zł Trwa Zobacz obwieszczenie",
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
-      "discovered_at": "2026-11-07T21:57:40.110665+00:00"
+      "discovered_at": "2026-11-07T22:00:56.060831+00:00"
     },
     {
       "title": "lokal mieszkalny o nr KW CZ1C/00145017/2",
@@ -71,7 +71,7 @@
       "description": "Komornik Częstochowa · lokal mieszkalny o nr KW CZ1C/00145017/2 Nieruchomość I licytacja Termin: 08.12.2026, 10:00 Cena wywołania: 243 600,00 zł Trwa Zobacz obwieszczenie",
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
-      "discovered_at": "2026-11-07T21:57:40.110858+00:00"
+      "discovered_at": "2026-11-07T22:00:56.060970+00:00"
     },
     {
       "title": "Dom wraz działkami 25 627 m2",
@@ -79,7 +79,7 @@
       "description": "Komornik Częstochowa · Dom wraz działkami 25 627 m2 Nieruchomość II licytacja Termin: 08.12.2026, 10:30 Cena wywołania: 1 384 866,67 zł Trwa Zobacz obwieszczenie",
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
-      "discovered_at": "2026-11-07T21:57:40.111026+00:00"
+      "discovered_at": "2026-11-07T22:00:56.061083+00:00"
     },
     {
       "title": "nieruchomość gruntowa KW CZ1C/00067472/8 (na zasadzie wspólności ustawowej majątkowej małżeńskiej)",
@@ -87,7 +87,7 @@
       "description": "Komornik Częstochowa · nieruchomość gruntowa KW CZ1C/00067472/8 (na zasadzie wspólności ustawowej majątkowej małżeńskiej) Nieruchomość I licytacja Termin: 03.12.2026, 12:30 Cena wywołania: 196 500,00 zł Trwa Zobacz obwieszczenie",
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
-      "discovered_at": "2026-11-07T21:57:40.111191+00:00"
+      "discovered_at": "2026-11-07T22:00:56.061189+00:00"
     },
     {
       "title": "lokal użytkowy CZ1C/00107419/2",
@@ -95,7 +95,7 @@
       "description": "Komornik Częstochowa · lokal użytkowy CZ1C/00107419/2 Nieruchomość II licytacja Termin: 03.12.2026, 12:00 Cena wywołania: 294 340,00 zł Trwa Zobacz obwieszczenie",
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
-      "discovered_at": "2026-11-07T21:57:40.111366+00:00"
+      "discovered_at": "2026-11-07T22:00:56.061293+00:00"
     },
     {
       "title": "nieruchomość gruntowa zabudowana",
@@ -103,13 +103,61 @@
       "description": "Komornik Częstochowa · nieruchomość gruntowa zabudowana Nieruchomość I licytacja Termin: 26.11.2026, 10:00 Cena wywołania: 343 995,00 zł Trwa Zobacz obwieszczenie",
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
-      "discovered_at": "2026-11-07T21:57:40.111544+00:00"
+      "discovered_at": "2026-11-07T22:00:56.061399+00:00"
+    },
+    {
+      "title": "DOM, 176 m2, działka 400 m2, ul. Papierowa Zawodzie Cz-wa, 5 pokoi, kuchnia, 2 łazienki, garaż, kostka brukowa, do remontu, możliwa zamiana na mniejszy",
+      "url": "https://posrednik.pl/listings/dom-176-m2-dzialka-400-m2-ul-papierowa-zawodzie-cz-wa-5-pokoi-kuchnia-2-lazienki-garaz-kostka-brukowa-do-remontu-legacy-1523655",
+      "description": "Sprzedaż · 295 000 zł · Częstochowa, Śląskie 05.11.2026",
+      "query": "Pośrednik — ogłoszenie sprzedaży",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T22:00:57.044831+00:00"
+    },
+    {
+      "title": "DZIAŁKA budowlana, 935 m2, Radomsko",
+      "url": "https://posrednik.pl/listings/dzialka-budowlana-935-m2-radomsko-legacy-1337037",
+      "description": "Sprzedaż · 125 000 zł · Częstochowa, śląskie 05.11.2026",
+      "query": "Pośrednik — ogłoszenie sprzedaży",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T22:00:57.045200+00:00"
+    },
+    {
+      "title": "M-3, 44 m2, Trzech Wieszczy",
+      "url": "https://posrednik.pl/listings/m-3-44-m2-trzech-wieszczy-2",
+      "description": "Sprzedaż · 300 000 zł · Częstochowa, Śląskie 05.11.2026",
+      "query": "Pośrednik — ogłoszenie sprzedaży",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T22:00:57.045556+00:00"
+    },
+    {
+      "title": "Dom z działka na Stradomiu",
+      "url": "https://posrednik.pl/listings/dom-z-dzialka-na-stradomiu-2",
+      "description": "Sprzedaż · 250 000 zł · Częstochowa, Śląskie 04.11.2026",
+      "query": "Pośrednik — ogłoszenie sprzedaży",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T22:00:57.045924+00:00"
+    },
+    {
+      "title": "M-3, 49 m2",
+      "url": "https://posrednik.pl/listings/m-3-49-m2",
+      "description": "Sprzedaż · Cena do uzgodnienia · Częstochowa, Śląskie 03.11.2026",
+      "query": "Pośrednik — ogłoszenie sprzedaży",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T22:00:57.046382+00:00"
+    },
+    {
+      "title": "mieszkanie 1pokojowe, kawalerka naprzeciw Politechniki, ul Dąbrowskiego, parter",
+      "url": "https://posrednik.pl/listings/mieszkanie-1pokojowe-kawalerka-naprzeciw-politechniki-ul-dabrowskiego-parter-3",
+      "description": "Sprzedaż · 300 000 zł · Częstochowa, Śląskie 02.11.2026",
+      "query": "Pośrednik — ogłoszenie sprzedaży",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T22:00:57.046737+00:00"
     }
   ],
-  "status": "Oferty oficjalnie sprawdzone i tropy z wyszukiwarek. Przeszukano 18 zapytań; odpowiedzi z 0. Wyniki automatyczne wymagają weryfikacji. Nowych: 6.",
+  "status": "Oferty oficjalnie sprawdzone i tropy z wyszukiwarek. Przeszukano 21 zapytań; odpowiedzi z 0. Wyniki automatyczne wymagają weryfikacji. Nowych: 12.",
   "source_health": {
-    "queries": 18,
+    "queries": 21,
     "responding": 0,
-    "new": 6
+    "new": 12
   }
 }
