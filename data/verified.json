@@ -7,7 +7,49 @@
       "description": "Cena wywoławcza 393 266,67 zł · oszacowanie 589 900 zł · rękojmia 58 990 zł · licytacja 10–17.12.2026 · działki 44/4, 100/14 i 100/12 · KW CZ1C/00115611/7. Oficjalne obwieszczenie z 03.11.2026.",
       "query": "licytacja nieruchomości Częstochowa",
       "verified_at": "2026-11-07"
+    },
+    {
+      "title": "Częstochowa, ul. Malownicza 82 — opis i oszacowanie",
+      "url": "https://licytacje.komornik.pl/wyszukiwarka/obwieszczenia-o-terminie-opisu-i-oszacowania/12463/nieruchomosc-gruntowa-zabudowana",
+      "description": "Etap przygotowawczy, nie licytacja. Opis i oszacowanie: 12.11.2026, godz. 11:00. KW CZ1C/00090075/5.",
+      "query": "Komornik — oficjalne obwieszczenie",
+      "verified_at": "2026-11-07"
+    },
+    {
+      "title": "Częstochowa, ul. Brzeźnicka 43 — opis i oszacowanie",
+      "url": "https://licytacje.komornik.pl/wyszukiwarka/obwieszczenia-o-terminie-opisu-i-oszacowania/13427/nieruchomosc-gruntowa-zabudowana",
+      "description": "Etap przygotowawczy, nie licytacja. Opis i oszacowanie: 21.12.2026. KW CZ1C/00004376/6.",
+      "query": "Komornik — oficjalne obwieszczenie",
+      "verified_at": "2026-11-07"
+    },
+    {
+      "title": "Częstochowa, ul. Kordeckiego 23/30 — lokal, opis i oszacowanie",
+      "url": "https://licytacje.komornik.pl/wyszukiwarka/obwieszczenia-o-terminie-opisu-i-oszacowania/13163/lokal-stanowiacy-odrebna-nieruchomosc",
+      "description": "Etap przygotowawczy, nie licytacja. Opis i oszacowanie: 16.11.2026. KW CZ1C/00139672/6.",
+      "query": "Komornik — oficjalne obwieszczenie",
+      "verified_at": "2026-11-07"
+    },
+    {
+      "title": "Poczesna — działki niezabudowane, opis i oszacowanie",
+      "url": "https://licytacje.komornik.pl/wyszukiwarka/obwieszczenia-o-terminie-opisu-i-oszacowania/11231/nieruchomosc-niezabudowana",
+      "description": "Etap przygotowawczy, nie licytacja. Działki 260/3, 379, 392, 394, 395, 397, 420. Opis i oszacowanie: 16.11.2026.",
+      "query": "Komornik — oficjalne obwieszczenie",
+      "verified_at": "2026-11-07"
+    },
+    {
+      "title": "Kłomnice, ul. Kolejowa — 7800 m², e-licytacja w toku",
+      "url": "https://licytacje.komornik.pl/wyszukiwarka/obwieszczenia-o-licytacji/57552/obwieszczenie-o-licytacji",
+      "description": "Licytacja 05–12.11.2026; termin wpłaty rękojmi minął 03.11. Cena wywoławcza 369 825 zł. Nie jest to nowa okazja do przystąpienia.",
+      "query": "Komornik — oficjalne obwieszczenie",
+      "verified_at": "2026-11-07"
+    },
+    {
+      "title": "Częstochowa, ul. Konwaliowa 206 — opis i oszacowanie",
+      "url": "https://licytacje.komornik.pl/wyszukiwarka/obwieszczenia-o-terminie-opisu-i-oszacowania/10206/prawo-wlasnosci-nieruchomosci",
+      "description": "Etap przygotowawczy, nie licytacja. Ukończenie opisu i oszacowania 09.11.2026. Dotyczy udziałów w nieruchomości.",
+      "query": "Komornik — oficjalne obwieszczenie",
+      "verified_at": "2026-11-07"
     }
   ],
-  "status": "1 ogłoszenie zweryfikowane w oficjalnym źródle. Automatyczne wyszukiwanie w trakcie konfiguracji."
+  "status": "Zweryfikowane obwieszczenia urzędowe. Większość dotyczy etapu opisu i oszacowania, nie czynnej licytacji."
 }
