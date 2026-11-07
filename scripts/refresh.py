@@ -67,13 +67,29 @@ def official_notices():
     yield {"title":stage+" — "+title[:150],"url":link,"description":"Oficjalny portal komorniczy. "+title[:350],"query":"Komornik — oficjalne obwieszczenie","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
   except requests.RequestException as exc: print("official source error",str(exc)[:120],file=sys.stderr)
 
+def bailiff_office():
+ """Official local bailiff's public auction list; excludes cars and finished sales."""
+ url="https://www.czestochowa-komornik.com.pl/licytacje/"
+ try:
+  r=requests.get(url,headers=HEAD,timeout=(5,18));r.raise_for_status()
+  soup=BeautifulSoup(r.text,"html.parser")
+  for card in soup.select("article.b-auctions__item"):
+   if card.get("data-type")!="nieruchomosc" or card.get("data-status")!="active": continue
+   a=card.select_one('a[href*="licytacje.komornik.pl/licytacje/"]')
+   if not a: continue
+   title=" ".join(card.select_one(".b-auctions__title").stripped_strings) if card.select_one(".b-auctions__title") else ""
+   if not title: title="Nieruchomość — licytacja komornicza"
+   details=" ".join(card.stripped_strings)
+   yield {"title":title[:180],"url":a["href"],"description":"Komornik Częstochowa · "+details[:380],"query":"Licytacja — kancelaria komornicza Częstochowa","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
+ except requests.RequestException as exc: print("bailiff office error",str(exc)[:120],file=sys.stderr)
+
 def main():
  data=json.loads(OUT.read_text(encoding="utf-8"))
  now=datetime.now(timezone.utc)
  original=data.get("offers",[])
  offers={o["url"]:o for o in original if o.get("verified_at")}
  discovered=0; worked=0
- for o in official_notices():
+ for o in list(official_notices())+list(bailiff_office()):
   if o['url'] not in offers: offers[o['url']]=o; discovered+=1
  for q in QUERIES:
   hits=search(q)
