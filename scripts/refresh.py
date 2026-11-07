@@ -27,6 +27,8 @@ QUERIES=[
  'site:licytor.pl "Częstochowa" nieruchomość',
  'site:krz.ms.gov.pl "Częstochowa" nieruchomość'
 ]
+PROPERTY=re.compile(r"nieruchom|dzia[łl]k|lokal|mieszkan|dom\\b|grunt|licytac|przetarg|syndyk|komornik|zabudowan|budyn|kamienic|posesj|sprzeda[żz]",re.I)
+LOCAL=re.compile(r"blachown|cz[eę]stochow|k[łl]obuck|konopisk|wr[eę]czyc|poczesn|myszk[oó]w|olsztyn|k[łl]omnic|koniecpol|herby|lubliniec|kozieg[łl]ow|poraj|mst[oó]w|przyr[oó]w|r[eę]dzin|kamienic[aey] polsk|jan[oó]w",re.I)
 HEAD={"User-Agent":"Mozilla/5.0 (compatible; RadarOkazji/1.0; public search discovery)"}
 def get_items(url):
  r=requests.get(url,headers=HEAD,timeout=(5,12))
@@ -34,9 +36,11 @@ def get_items(url):
  root=ET.fromstring(r.content)
  for item in root.findall(".//item"):
   title=" ".join((item.findtext("title") or "").split())
+  summary=re.sub(r"<[^>]+>"," ",item.findtext("description") or "")
+  summary=" ".join(summary.split())[:500]
   link=(item.findtext("link") or "").strip()
-  if title and link.startswith("https://"):
-   yield {"title":title[:180],"url":link,"description":"Wynik publicznej wyszukiwarki. Sprawdź termin, lokalizację i status ogłoszenia u źródła.","query":"Automatyczne wyszukiwanie — wymaga weryfikacji","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
+  if title and link.startswith("https://") and PROPERTY.search(title+" "+summary) and LOCAL.search(title+" "+summary+" "+urllib.parse.unquote(link)):
+   yield {"title":title[:180],"url":link,"description":"Trop z wyszukiwarki — wymaga sprawdzenia u źródła. "+summary[:250],"query":"Automatyczne wyszukiwanie — wymaga weryfikacji","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
 def search(q):
  encoded=urllib.parse.quote(q)
  for url in ["https://www.bing.com/search?format=rss&q="+encoded, "https://news.google.com/rss/search?"+urllib.parse.urlencode({"q":q,"hl":"pl","gl":"PL","ceid":"PL:pl"})]:
