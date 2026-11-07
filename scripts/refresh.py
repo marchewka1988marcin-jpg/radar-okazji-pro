@@ -112,7 +112,7 @@ def main():
  data=json.loads(OUT.read_text(encoding="utf-8"))
  now=datetime.now(timezone.utc)
  original=data.get("offers",[])
- offers={o["url"]:o for o in original if o.get("verified_at")}
+ offers={o["url"]:o for o in original if o.get("url") and (o.get("verified_at") or o.get("discovered_at"))}
  discovered=0; worked=0
  source_counts={"komornik_portal":0,"kancelaria_czestochowa":0,"posrednik":0}
  for name,fn in [("komornik_portal",official_notices),("kancelaria_czestochowa",bailiff_office),("posrednik",posrednik_listings)]:
@@ -120,6 +120,8 @@ def main():
   source_counts[name]=len(hits)
   for o in hits:
    if o["url"] not in offers: offers[o["url"]]=o; discovered+=1
+   else:
+    offers[o["url"]]["last_seen_at"]=now.isoformat()
  for q in QUERIES:
   hits=search(q)
   if hits: worked+=1
@@ -127,6 +129,8 @@ def main():
    if o["url"] not in offers:
     offers[o["url"]]=o
     discovered+=1
+   else:
+    offers[o["url"]]["last_seen_at"]=now.isoformat()
   time.sleep(0.4)
  # Prevent stale unverified search hits from accumulating forever.
  cutoff=now-timedelta(days=35)
@@ -136,8 +140,9 @@ def main():
    final.append(o)
   else:
    try:
-    if datetime.fromisoformat(o.get("discovered_at",""))>=cutoff: final.append(o)
+    if datetime.fromisoformat(o.get("last_seen_at") or o.get("discovered_at",""))>=cutoff: final.append(o)
    except ValueError: pass
+ final.sort(key=lambda x: (bool(x.get("verified_at")),x.get("last_seen_at") or x.get("discovered_at") or ""),reverse=True)
  data.update({"updated_at":now.isoformat(),"offers":final[:250],"status":f"Bezpośrednie źródła: komornik {source_counts['komornik_portal']}, kancelaria {source_counts['kancelaria_czestochowa']}, Pośrednik {source_counts['posrednik']}. Wyszukiwarki RSS: {worked}/{len(QUERIES)}. Nowych: {discovered}. Weryfikuj u źródła.","source_health":{"queries":len(QUERIES),"responding":worked,"new":discovered,"direct_sources":source_counts}})
  OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  print(data["status"],"Total",len(final))
