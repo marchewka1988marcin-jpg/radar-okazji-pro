@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T21:51:46.774006+00:00",
+  "updated_at": "2026-11-07T21:57:34.389947+00:00",
   "offers": [
     {
       "title": "Częstochowa — grunt z budynkiem handlowo-usługowym, II e-licytacja",
@@ -56,12 +56,60 @@
       "description": "Cena wywołania 140 646,67 zł, rękojmia 21 097 zł do 08.12.2026; licytacja 10–17.12.2026. Oficjalny portal komorniczy.",
       "query": "Licytacja — Kłobuck",
       "verified_at": "2026-11-07"
+    },
+    {
+      "title": "Nieruchomość — licytacja komornicza",
+      "url": "https://licytacje.komornik.pl/licytacje/91245/nieruchomosc-gruntowa",
+      "description": "Komornik Częstochowa · Nieruchomość I licytacja Termin: 10.12.2026, 13:00 Cena wywołania: 290 880,00 zł Trwa Zobacz obwieszczenie",
+      "query": "Licytacja — kancelaria komornicza Częstochowa",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T21:57:40.110665+00:00"
+    },
+    {
+      "title": "lokal mieszkalny o nr KW CZ1C/00145017/2",
+      "url": "https://licytacje.komornik.pl/licytacje/87271/lokal-mieszkalny-o-nr-kw-cz1c-00145017-2",
+      "description": "Komornik Częstochowa · lokal mieszkalny o nr KW CZ1C/00145017/2 Nieruchomość I licytacja Termin: 08.12.2026, 10:00 Cena wywołania: 243 600,00 zł Trwa Zobacz obwieszczenie",
+      "query": "Licytacja — kancelaria komornicza Częstochowa",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T21:57:40.110858+00:00"
+    },
+    {
+      "title": "Dom wraz działkami 25 627 m2",
+      "url": "https://licytacje.komornik.pl/licytacje/87286/dom-wraz-dzialkami-25-627-m2",
+      "description": "Komornik Częstochowa · Dom wraz działkami 25 627 m2 Nieruchomość II licytacja Termin: 08.12.2026, 10:30 Cena wywołania: 1 384 866,67 zł Trwa Zobacz obwieszczenie",
+      "query": "Licytacja — kancelaria komornicza Częstochowa",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T21:57:40.111026+00:00"
+    },
+    {
+      "title": "nieruchomość gruntowa KW CZ1C/00067472/8 (na zasadzie wspólności ustawowej majątkowej małżeńskiej)",
+      "url": "https://licytacje.komornik.pl/licytacje/90457/nieruchomosc-gruntowa-kw-cz1c-00067472-8-na-zasadzie-wspolnosci-ustawowej-majatkowej-malzenskiej",
+      "description": "Komornik Częstochowa · nieruchomość gruntowa KW CZ1C/00067472/8 (na zasadzie wspólności ustawowej majątkowej małżeńskiej) Nieruchomość I licytacja Termin: 03.12.2026, 12:30 Cena wywołania: 196 500,00 zł Trwa Zobacz obwieszczenie",
+      "query": "Licytacja — kancelaria komornicza Częstochowa",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T21:57:40.111191+00:00"
+    },
+    {
+      "title": "lokal użytkowy CZ1C/00107419/2",
+      "url": "https://licytacje.komornik.pl/licytacje/90446/lokal-uzytkowy-cz1c-00107419-2",
+      "description": "Komornik Częstochowa · lokal użytkowy CZ1C/00107419/2 Nieruchomość II licytacja Termin: 03.12.2026, 12:00 Cena wywołania: 294 340,00 zł Trwa Zobacz obwieszczenie",
+      "query": "Licytacja — kancelaria komornicza Częstochowa",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T21:57:40.111366+00:00"
+    },
+    {
+      "title": "nieruchomość gruntowa zabudowana",
+      "url": "https://licytacje.komornik.pl/licytacje/88289/nieruchomosc-gruntowa-zabudowana",
+      "description": "Komornik Częstochowa · nieruchomość gruntowa zabudowana Nieruchomość I licytacja Termin: 26.11.2026, 10:00 Cena wywołania: 343 995,00 zł Trwa Zobacz obwieszczenie",
+      "query": "Licytacja — kancelaria komornicza Częstochowa",
+      "verified_at": null,
+      "discovered_at": "2026-11-07T21:57:40.111544+00:00"
     }
   ],
-  "status": "8 ogłoszeń sprawdzonych w źródłach urzędowych; dodatkowe źródła są testowane.",
+  "status": "Oferty oficjalnie sprawdzone i tropy z wyszukiwarek. Przeszukano 18 zapytań; odpowiedzi z 0. Wyniki automatyczne wymagają weryfikacji. Nowych: 6.",
   "source_health": {
     "queries": 18,
     "responding": 0,
-    "new": 0
+    "new": 6
   }
 }
