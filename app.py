@@ -1,7 +1,7 @@
 """Radar Okazji: live dataset from public GitHub, independent of Render deployments."""
-import json, time, threading, requests
+import json, time, threading, requests, html
 from pathlib import Path
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, send_from_directory, Response
 app=Flask(__name__,static_folder="static")
 DATA_URL="https://raw.githubusercontent.com/marchewka1988marcin-jpg/radar-okazji-pro/main/data/verified.json"
 cache={"value":None,"checked":0,"last_error":None,"source":"unknown"}
@@ -25,7 +25,23 @@ def read_offers():
    local["status"]=local.get("status","")+" · Dane zapasowe, aktualizacja GitHub chwilowo niedostępna."
    return local
 @app.get("/")
-def index(): return send_from_directory("static","index.html")
+def index():
+ """Render actual offer cards on the server so the page works even if iOS blocks JS."""
+ data=read_offers()
+ template=Path("static/index.html").read_text(encoding="utf-8")
+ cards=[]
+ for offer in data.get("offers",[])[:250]:
+  title=html.escape(str(offer.get("title") or "Ogłoszenie"))
+  description=html.escape(str(offer.get("description") or ""))
+  source=html.escape(str(offer.get("query") or ""))
+  url=str(offer.get("url") or "")
+  if not url.startswith(("https://","http://")): continue
+  cards.append(f'<article class="card offer"><h3>{title}</h3><p class="muted">{description}</p><div class="small muted">{source}</div><a href="{html.escape(url,quote=True)}" target="_blank" rel="noopener noreferrer">Otwórz źródło ↗</a></article>')
+ template=template.replace('<section id="results"></section>','<section id="results">'+''.join(cards)+'</section>')
+ template=template.replace('id="count">0 wyników','id="count">'+str(len(cards))+' wyników')
+ template=template.replace('id="status" class="muted">Sprawdzam połączenie…','id="status" class="muted">Dane: '+html.escape(str(data.get("updated_at") or ""))+' · '+html.escape(str(data.get("status") or "")))
+ return Response(template,mimetype="text/html",headers={"Cache-Control":"no-store, max-age=0"})
+
 @app.get("/health")
 def health():
  data=read_offers()
