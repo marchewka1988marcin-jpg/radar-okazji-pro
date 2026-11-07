@@ -15,10 +15,10 @@ lock=threading.Lock()
 def fetch():
  offers={}
  errors=[]
- for q in QUERIES:
+ for q in QUERIES[:4]:
   try:
    params=urlencode({"q":q+" when:30d","hl":"pl","gl":"PL","ceid":"PL:pl"})
-   r=requests.get("https://news.google.com/rss/search?"+params,headers={"User-Agent":"Mozilla/5.0 RadarOkazji/1.0"},timeout=12)
+   r=requests.get("https://news.google.com/rss/search?"+params,headers={"User-Agent":"Mozilla/5.0 RadarOkazji/1.0"},timeout=(3,5))
    r.raise_for_status()
    root=ET.fromstring(r.content)
    for item in root.findall(".//item"):
@@ -28,9 +28,12 @@ def fetch():
     if url.startswith("https://") and url not in offers:
      offers[url]={"title":title,"url":url,"description":"Wynik z publicznego indeksu wiadomości; sprawdź ogłoszenie u źródła. "+date,"query":q}
   except Exception as exc: errors.append(str(exc)[:120])
- return {"updated_at":datetime.now(timezone.utc).isoformat(),"offers":list(offers.values()),"status":"Publiczne wyniki wyszukiwania. Nie jest to pełny monitoring BIP ani potwierdzona lista ofert w promieniu 50 km." if offers else "Nie znaleziono wyników w publicznym kanale RSS. Trwa sprawdzanie dostępności źródeł.","errors":errors[:3]}
+ return {"updated_at":datetime.now(timezone.utc).isoformat(),"offers":list(offers.values()),"status":("Znaleziono publiczne wyniki; zweryfikuj lokalizację i aktualność u źródła." if offers else ("Nie udało się pobrać wyników z publicznego RSS." if errors else "Publiczne źródło RSS nie zwróciło wyników.")),"errors":errors[:3]}
 def update():
- with lock: cache.update(fetch())
+ with lock:
+  cache["status"]="Trwa pobieranie danych z publicznych źródeł"
+  try: cache.update(fetch())
+  except Exception as exc: cache.update({"updated_at":datetime.now(timezone.utc).isoformat(),"offers":[],"status":"Błąd pobierania: "+str(exc)[:100]})
 def background():
  while True:
   update()
