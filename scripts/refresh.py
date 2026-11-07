@@ -122,7 +122,7 @@ def otodom_listings():
    soup=BeautifulSoup(r.text,"html.parser")
    for a in soup.select('a[href*="/pl/oferta/"]'):
     link=urllib.parse.urljoin("https://www.otodom.pl",a.get("href","")).split("?")[0]
-    if link in seen or not re.match(r"^https://www\\.otodom\\.pl/pl/oferta/[^/?#]+-ID[a-zA-Z0-9]+$",link): continue
+    if link in seen or not re.match(r"^https://www\.otodom\.pl/pl/oferta/[^/?#]+-ID[a-zA-Z0-9]+$",link): continue
     seen.add(link)
     title=" ".join(a.stripped_strings)
     if len(title)<8:
