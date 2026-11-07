@@ -122,7 +122,7 @@ def otodom_listings():
    soup=BeautifulSoup(r.text,"html.parser")
    for a in soup.select('a[href*="/pl/oferta/"]'):
     link=urllib.parse.urljoin("https://www.otodom.pl",a.get("href","")).split("?")[0]
-    if link in seen or not re.search(r"/pl/oferta/[^/]+-ID[a-zA-Z0-9]+",link): continue
+    if link in seen or not re.match(r"^https://www\\.otodom\\.pl/pl/oferta/[^/?#]+-ID[a-zA-Z0-9]+$",link): continue
     seen.add(link)
     title=" ".join(a.stripped_strings)
     if len(title)<8:
@@ -139,7 +139,7 @@ def main():
  data=json.loads(OUT.read_text(encoding="utf-8"))
  now=datetime.now(timezone.utc)
  original=data.get("offers",[])
- offers={o["url"]:o for o in original if o.get("url") and (o.get("verified_at") or o.get("discovered_at"))}
+ offers={o["url"]:o for o in original if o.get("url") and (o.get("verified_at") or o.get("discovered_at")) and not ("/hpr/pl/oferta/" in o["url"])}
  discovered=0; worked=0
  source_counts={"komornik_portal":0,"kancelaria_czestochowa":0,"posrednik":0,"otodom":0}
  for name,fn in [("komornik_portal",official_notices),("kancelaria_czestochowa",bailiff_office),("posrednik",posrednik_listings),("otodom",otodom_listings)]:
