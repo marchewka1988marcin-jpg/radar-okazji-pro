@@ -108,14 +108,41 @@ def posrednik_listings():
    yield {"title":title.get_text(" ",strip=True)[:180],"url":link,"description":desc[:380],"query":"Pośrednik — ogłoszenie sprzedaży","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
  except requests.RequestException as exc: print("posrednik error",str(exc)[:120],file=sys.stderr)
 
+def otodom_listings():
+ """Public Otodom sale results; no results reported if access is blocked."""
+ urls=[
+  "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/slaskie/czestochowa/czestochowa/czestochowa",
+  "https://www.otodom.pl/pl/wyniki/sprzedaz/dom/slaskie/czestochowa/czestochowa/czestochowa",
+  "https://www.otodom.pl/pl/wyniki/sprzedaz/dzialka/slaskie/czestochowa/czestochowa/czestochowa",
+ ]
+ seen=set()
+ for url in urls:
+  try:
+   r=requests.get(url,headers={**HEAD,"Accept-Language":"pl-PL,pl;q=0.9"},timeout=(5,18));r.raise_for_status()
+   soup=BeautifulSoup(r.text,"html.parser")
+   for a in soup.select('a[href*="/pl/oferta/"]'):
+    link=urllib.parse.urljoin("https://www.otodom.pl",a.get("href","")).split("?")[0]
+    if link in seen or not re.search(r"/pl/oferta/[^/]+-ID[a-zA-Z0-9]+",link): continue
+    seen.add(link)
+    title=" ".join(a.stripped_strings)
+    if len(title)<8:
+     img=a.select_one("img[alt]")
+     title=img.get("alt","") if img else ""
+    if len(title)<8: continue
+    card=a.find_parent("article") or a.parent
+    details=" ".join(card.stripped_strings)[:500] if card else title
+    if not LOCAL.search(details): continue
+    yield {"title":title[:180],"url":link,"description":"Otodom · oferta sprzedaży · "+details[:300],"query":"Otodom — ogłoszenie sprzedaży","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
+  except requests.RequestException as exc: print("otodom unavailable",str(exc)[:140],file=sys.stderr)
+
 def main():
  data=json.loads(OUT.read_text(encoding="utf-8"))
  now=datetime.now(timezone.utc)
  original=data.get("offers",[])
  offers={o["url"]:o for o in original if o.get("url") and (o.get("verified_at") or o.get("discovered_at"))}
  discovered=0; worked=0
- source_counts={"komornik_portal":0,"kancelaria_czestochowa":0,"posrednik":0}
- for name,fn in [("komornik_portal",official_notices),("kancelaria_czestochowa",bailiff_office),("posrednik",posrednik_listings)]:
+ source_counts={"komornik_portal":0,"kancelaria_czestochowa":0,"posrednik":0,"otodom":0}
+ for name,fn in [("komornik_portal",official_notices),("kancelaria_czestochowa",bailiff_office),("posrednik",posrednik_listings),("otodom",otodom_listings)]:
   hits=list(fn())
   source_counts[name]=len(hits)
   for o in hits:
