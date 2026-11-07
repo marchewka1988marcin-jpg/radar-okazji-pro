@@ -31,8 +31,8 @@ QUERIES=[
  'site:otodom.pl/pl/oferta/ Częstochowa działka dom mieszkanie',
  'site:posrednik.pl/listings/ Częstochowa sprzedaż'
 ]
-PROPERTY=re.compile(r"nieruchom|dzia[łl]k|lokal|mieszkan|dom\\b|grunt|licytac|przetarg|syndyk|komornik|zabudowan|budyn|kamienic|posesj|sprzeda[żz]",re.I)
-TRUSTED=re.compile(r"(?:olx\\.pl|otodom\\.pl|posrednik\\.pl|licytacje\\.komornik\\.pl|listaprzetargow\\.pl|licytor\\.pl|adradar\\.pl|aukcjeskarbowe\\.pl|(?:^|\\.)bip\\.|(?:^|\\.)gov\\.pl|(?:^|\\.)kowa?nr?\\.gov\\.pl)",re.I)
+PROPERTY=re.compile(r"nieruchom|dzia[łl]k|lokal|mieszkan|dom\b|grunt|licytac|przetarg|syndyk|komornik|zabudowan|budyn|kamienic|posesj|sprzeda[żz]",re.I)
+TRUSTED=re.compile(r"(?:olx\.pl|otodom\.pl|posrednik\.pl|licytacje\.komornik\.pl|listaprzetargow\.pl|licytor\.pl|adradar\.pl|aukcjeskarbowe\.pl|(?:^|\.)bip\.|(?:^|\.)gov\.pl|(?:^|\.)kowa?nr?\.gov\.pl)",re.I)
 LOCAL=re.compile(r"blachown|cz[eę]stochow|k[łl]obuck|konopisk|wr[eę]czyc|poczesn|myszk[oó]w|olsztyn|k[łl]omnic|koniecpol|herby|lubliniec|kozieg[łl]ow|poraj|mst[oó]w|przyr[oó]w|r[eę]dzin|kamienic[aey] polsk|jan[oó]w",re.I)
 HEAD={"User-Agent":"Mozilla/5.0 (compatible; RadarOkazji/1.0; public search discovery)"}
 def get_items(url):
@@ -170,7 +170,7 @@ def main():
     if datetime.fromisoformat(o.get("last_seen_at") or o.get("discovered_at",""))>=cutoff: final.append(o)
    except ValueError: pass
  final.sort(key=lambda x: (bool(x.get("verified_at")),x.get("last_seen_at") or x.get("discovered_at") or ""),reverse=True)
- data.update({"updated_at":now.isoformat(),"offers":final[:250],"status":f"Bezpośrednie źródła: komornik {source_counts['komornik_portal']}, kancelaria {source_counts['kancelaria_czestochowa']}, Pośrednik {source_counts['posrednik']}. Wyszukiwarki RSS: {worked}/{len(QUERIES)}. Nowych: {discovered}. Weryfikuj u źródła.","source_health":{"queries":len(QUERIES),"responding":worked,"new":discovered,"direct_sources":source_counts}})
+ data.update({"updated_at":now.isoformat(),"offers":final[:250],"status":f"Bezpośrednie źródła: komornik {source_counts['komornik_portal']}, kancelaria {source_counts['kancelaria_czestochowa']}, Pośrednik {source_counts['posrednik']}. Wyszukiwarki RSS z trafieniami: {worked}/{len(QUERIES)}. Otodom: {source_counts['otodom']}. Nowych: {discovered}. Weryfikuj u źródła.","source_health":{"queries":len(QUERIES),"responding":worked,"new":discovered,"direct_sources":source_counts}})
  OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  print(data["status"],"Total",len(final))
 if __name__=="__main__":main()
