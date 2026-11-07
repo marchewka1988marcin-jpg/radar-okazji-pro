@@ -8,7 +8,7 @@ cache={"value":None,"checked":0}
 lock=threading.Lock()
 def read_offers():
  with lock:
-  if cache["value"] and time.monotonic()-cache["checked"]<90: return cache["value"]
+  if cache["value"] and time.monotonic()-cache["checked"]<15: return cache["value"]
   try:
    r=requests.get(DATA_URL,params={"_":int(time.time()//90)},timeout=(3,7),headers={"User-Agent":"RadarOkazji/1.0"})
    r.raise_for_status()
@@ -29,4 +29,7 @@ def health():
  data=read_offers()
  return jsonify({"ok":True,"updated_at":data.get("updated_at"),"count":len(data.get("offers",[]))})
 @app.get("/api/offers")
-def offers(): return jsonify(read_offers())
+def offers():
+ response=jsonify(read_offers())
+ response.headers["Cache-Control"]="no-store, max-age=0"
+ return response
