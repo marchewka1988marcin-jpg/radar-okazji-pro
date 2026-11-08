@@ -1,1 +1,136 @@
-<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d1726"><title>Radar Okazji PRO</title><style>body{margin:0;background:#0b1422;color:#f1f5f9;font:15px system-ui}header{padding:28px 18px;background:#14243b}h1{font-size:25px;margin:5px 0}main{max-width:960px;margin:auto;padding:18px}.muted{color:#a8b6ca}.card{background:#17263a;border:1px solid #2b3e55;border-radius:16px;padding:16px;margin:12px 0}.chip{display:inline-block;border-radius:12px;padding:6px 10px;background:#28425d;color:#cce7ff;font-size:12px}input,select{padding:12px;border-radius:10px;border:1px solid #42536b;background:#0e1a2b;color:white;max-width:100%;box-sizing:border-box}input{width:100%}a{color:#75c7ff}.tools{display:grid;grid-template-columns:2fr 1fr;gap:10px}.offer h3{margin:8px 0;font-size:18px}.offer p{line-height:1.5}.small{font-size:12px}.stats{display:flex;gap:8px;flex-wrap:wrap}</style></head><body><header><div style="max-width:960px;margin:auto"><div class="chip">BLACHOWNIA I OKOLICE · WERSJA TESTOWA</div><h1>🏡 Radar Okazji Nieruchomości</h1><div class="muted">Licytacje komornicze · Pośrednik · kolejne źródła w przygotowaniu</div></div></header><main><div class="card"><b>Stan aktualizacji</b><p id="status" class="muted">Sprawdzam połączenie…</p><div class="stats"><span class="chip" id="count">0 wyników</span><span class="chip">Weryfikuj każdą ofertę u źródła</span></div></div><div class="tools"><input id="search" placeholder="Szukaj miejscowości, nieruchomości…"><select id="source"><option value="">Wszystkie źródła</option><option value="BIP">BIP</option><option value="syndyk">Syndycy</option><option value="licytac">Licytacje</option><option value="KOWR">KOWR</option><option value="listaprzetargow">Agregatory</option><option value="posrednik">Pośrednik</option><option value="olx.pl">OLX</option><option value="otodom.pl">Otodom</option><option value="kancelaria">Kancelaria komornicza</option></select></div><div class="card"><div class="stats" id="breakdown"></div><div class="muted small" id="sourcehealth"></div></div><section id="results"></section><div class="card"><b>Ważne</b><p class="muted">Panel pokazuje publiczne wyniki wyszukiwania, a nie potwierdzone okazje. Dokładny promień 50 km nie jest jeszcze automatycznie weryfikowany. OLX pozostaje źródłem testowym; Otodom jest pobierany bezpośrednio, ale może być okresowo niedostępny. Liczniki pokazują pobrane oferty, nie liczbę zweryfikowanych okazji. Aktualność, cena, wadium i stan prawny wymagają weryfikacji. Publicznych treści za paywallem nie pobieramy.</p></div></main><script>let offers=[];const el=id=>document.getElementById(id);function render(){let q=el('search').value.toLowerCase(),s=el('source').value.toLowerCase();let a=offers.filter(x=>(x.title+' '+x.description+' '+x.query).toLowerCase().includes(q)&&(x.url+' '+x.query).toLowerCase().includes(s));el('count').textContent=a.length+' wyników z '+offers.length+' w bazie';el('results').replaceChildren();let stats={};for(let o of offers){let n=(o.query||'Inne').toLowerCase(),key=n.includes('pośrednik')?'Pośrednik':n.includes('komornik')||n.includes('licytac')?'Licytacje':n.includes('olx')?'OLX':n.includes('otodom')?'Otodom':'Inne';stats[key]=(stats[key]||0)+1;}el('breakdown').replaceChildren();for(let [k,v] of Object.entries(stats)){let span=document.createElement('span');span.className='chip';span.textContent=k+': '+v;el('breakdown').append(span);}if(!a.length){let p=document.createElement('p');p.className='muted';p.textContent='Brak ofert spełniających filtry lub brak pobranych danych.';el('results').append(p)}for(let x of a){let d=document.createElement('article');d.className='card offer';let h=document.createElement('h3');h.textContent=x.title;let p=document.createElement('p');p.className='muted';p.textContent=x.description||'Brak opisu';let sm=document.createElement('div');sm.className='small muted';sm.textContent=x.query;let l=document.createElement('a');l.href=x.url;l.target='_blank';l.rel='noopener noreferrer';l.textContent='Otwórz źródło ↗';d.append(h,p,sm,l);el('results').append(d)}}el('search').oninput=render;el('source').onchange=render;async function load(){try{let r=await fetch('/api/offers?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);let d=await r.json();offers=d.offers||[];let health=d.source_health||{};let sources=health.direct_sources||{};el('sourcehealth').textContent='Ostatni skan — Pośrednik: '+(sources.posrednik??'brak danych')+', Otodom: '+(sources.otodom??'brak danych')+', kancelaria: '+(sources.kancelaria_czestochowa??'brak danych')+', portal komorniczy: '+(sources.komornik_portal??'brak danych')+', RSS: '+(health.responding??'brak danych')+'/'+(health.queries??'?')+' zapytań z trafieniami';el('status').textContent=(d.updated_at?'Dane: '+new Date(d.updated_at).toLocaleString('pl-PL')+' · ':'')+d.status;render()}catch(e){el('status').textContent='Błąd API: '+e.message}}load();setInterval(load,30000);</script></body></html>
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101c2e"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="description" content="Radar Okazji PRO — automatyczny przegląd ogłoszeń nieruchomości z Blachowni i okolic.">
+<link rel="manifest" href="/static/manifest.webmanifest">
+<title>Radar Okazji PRO — Blachownia</title>
+<style>
+:root{color-scheme:dark;--bg:#0c1523;--card:#18283d;--edge:#34465a;--text:#eef5ff;--muted:#a9bcd1;--blue:#80caff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,Arial,sans-serif}
+header{padding:24px 16px;background:linear-gradient(125deg,#152843,#1e3951);border-bottom:1px solid var(--edge)}
+header .inner,main{max-width:1100px;margin:auto}
+h1{font-size:clamp(25px,5vw,34px);line-height:1.16;margin:7px 0}h2{font-size:19px;margin:0 0 12px}
+main{padding:18px 14px 48px}.muted{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--edge);border-radius:16px;padding:16px;margin:0 0 14px;min-width:0}
+.status{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.chip{display:inline-block;border-radius:24px;border:1px solid #42617d;background:#253d57;color:#e0f3ff;font-size:12px;padding:5px 10px}
+.chip.warn{background:#4b3422;border-color:#855b32;color:#ffdfaf}
+.chip.good{background:#183d37;border-color:#2f806c;color:#abf8de}
+label{display:block;font-size:12px;font-weight:650;color:#c7d7e8;margin:0 0 5px}
+.controls{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:10px}
+input,select,button{font:inherit;border-radius:10px;border:1px solid #54718c;padding:10px 12px;min-height:45px}
+input,select{background:#0f2033;color:#fff;width:100%;min-width:0}
+button{background:#24496b;color:#e8f6ff;cursor:pointer}
+button:hover{background:#31638e}button:disabled{opacity:.65;cursor:wait}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:13px 2px}
+#results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.offer{margin:0;display:flex;flex-direction:column;gap:8px}
+.offer h3{font-size:17px;line-height:1.32;margin:0;overflow-wrap:anywhere}
+.offer p{margin:0;overflow-wrap:anywhere}
+.offer .meta{font-size:12px;color:var(--muted)}
+.offer .foot{margin-top:auto;padding-top:8px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.offer a{color:var(--blue);font-weight:650;text-decoration:none}
+.offer a:hover{text-decoration:underline}
+.heart{font-size:18px;padding:3px 10px;min-height:36px;min-width:40px}
+.small{font-size:12px}#sourcehealth{margin-top:8px;overflow-wrap:anywhere}
+#status{margin:8px 0 0}
+footer{padding-top:16px}
+@media(max-width:760px){.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.controls .search-field{grid-column:1/-1}#results{grid-template-columns:1fr}header{padding:18px 14px}}
+@media(max-width:400px){.controls{grid-template-columns:1fr}.controls .search-field{grid-column:auto}}
+</style>
+</head>
+<body>
+<header><div class="inner">
+<span class="chip">BLACHOWNIA I OKOLICE</span>
+<h1>🏡 Radar Okazji PRO</h1>
+<div class="muted">Oferty sprzedaży, licytacje i przetargi · automatyczne skanowanie co 6 godzin</div>
+</div></header>
+<main>
+<section class="card">
+<div class="status">
+<div><b>Stan danych</b><p id="status" class="muted" aria-live="polite">Odczytuję aktualizację…</p></div>
+<button type="button" id="reload">↻ Odśwież dane</button>
+</div>
+<div class="chips">
+<span class="chip" id="count">0 wyników</span>
+<span class="chip" id="fresh">Sprawdzam datę skanu</span>
+<span class="chip" id="newcount">Nowe: —</span>
+</div>
+<div id="sourcehealth" class="muted small"></div>
+</section>
+<section class="card">
+<h2>Wyszukaj nieruchomość</h2>
+<div class="controls">
+<div class="search-field"><label for="search">Miejscowość, adres, rodzaj</label><input id="search" type="search" placeholder="Np. Blachownia, działka, licytacja…" autocomplete="off"></div>
+<div><label for="source">Źródło</label><select id="source">
+<option value="">Wszystkie</option><option value="olx.pl">OLX</option><option value="otodom.pl">Otodom</option>
+<option value="posrednik.pl">Pośrednik</option><option value="licytacje.komornik.pl">Komornik</option>
+<option value="other">Inne / BIP</option></select></div>
+<div><label for="kind">Rodzaj</label><select id="kind">
+<option value="">Wszystkie</option><option value="mieszkania">Mieszkania</option><option value="domy">Domy</option><option value="dzialki">Działki / grunty</option><option value="licytacje">Licytacje i obwieszczenia</option>
+</select></div>
+<div><label for="order">Sortowanie</label><select id="order">
+<option value="newest">Najnowsze znalezione</option><option value="oldest">Najstarsze znalezione</option><option value="title">Alfabetycznie</option>
+</select></div>
+</div>
+<div class="chips"><label style="display:flex;align-items:center;gap:7px;font-size:13px;font-weight:400;margin:8px 0 0"><input type="checkbox" id="saved" style="width:18px;min-height:18px"> Tylko zapisane ★</label></div>
+</section>
+<div class="toolbar"><b id="resulttitle">Oferty</b><span class="muted small">Linki prowadzą do oryginalnych ogłoszeń</span></div>
+<section id="results" aria-live="polite"></section>
+<footer class="card"><b>Ważne informacje</b><p class="muted small">Radar zbiera publiczne ogłoszenia, a nie gwarantowane okazje. Każdą ofertę, cenę, termin licytacji, wadium i stan prawny należy sprawdzić na stronie źródłowej. Dokładny promień 50 km nie jest jeszcze potwierdzany współrzędnymi; ogłoszenia są wstępnie filtrowane według nazw miejscowości. Gdy portal ogranicza automatyczny dostęp, może nie zwrócić żadnych nowych ofert. Zapisane gwiazdką ogłoszenia pozostają tylko w tej przeglądarce.</p></footer>
+</main>
+<script>
+(function(){
+'use strict';
+var offers=[], favorites={};
+var el=function(id){return document.getElementById(id)};
+try{favorites=JSON.parse(localStorage.getItem('radar-favorites-v1')||'{}')||{}}catch(e){favorites={}}
+function host(o){try{return new URL(o.url).hostname.replace(/^www\./,'')}catch(e){return ''}}
+function labelSource(o){var h=host(o);if(h.indexOf('olx.pl')>=0)return 'OLX';if(h.indexOf('otodom.pl')>=0)return 'Otodom';if(h.indexOf('posrednik.pl')>=0)return 'Pośrednik';if(h.indexOf('komornik.pl')>=0)return 'Komornik';return 'Inne / BIP'}
+function kind(o){var k=(o.category||'').toLowerCase();if(k)return k;var h=(o.title||'').toLowerCase(),s=(o.description||'').toLowerCase();if((o.query||'').toLowerCase().indexOf('komornik')>=0||/licytacja|oszacowanie|obwieszczenie/.test(h))return 'licytacje';if(/mieszkan|apartament|kawalerka|lokal mieszkalny/.test(h))return 'mieszkania';if(/dom\b|domu\b|bliźniak|szeregówk/.test(h))return 'domy';if(/działk|grunt|roln|budowlan/.test(h))return 'dzialki';return /grunt|działk/.test(s)?'dzialki':''}
+function date(o){return Date.parse(o.discovered_at||o.verified_at||'')||0}
+function safeDate(s){if(!s)return 'brak daty';var d=new Date(s);return isNaN(d.getTime())?'brak daty':d.toLocaleString('pl-PL',{day:'2-digit',month:'2-digit',year:'numeric',hour:s.indexOf('T')>=0?'2-digit':undefined,minute:s.indexOf('T')>=0?'2-digit':undefined})}
+function make(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
+function draw(){
+ var q=el('search').value.trim().toLocaleLowerCase('pl-PL'),src=el('source').value,k=el('kind').value,only=el('saved').checked;
+ var filtered=offers.filter(function(o){if(!o||!o.url||!o.title)return false;var h=host(o);if(src==='other'){if(['olx.pl','otodom.pl','posrednik.pl','licytacje.komornik.pl'].includes(h))return false}
+ else if(src&&h.indexOf(src)<0)return false;
+ if(k&&kind(o)!==k)return false;if(only&&!favorites[o.url])return false;
+ return (o.title+' '+(o.description||'')+' '+(o.query||'')+' '+(o.location||'')).toLocaleLowerCase('pl-PL').includes(q)});
+ var order=el('order').value;
+ filtered.sort(function(a,b){if(order==='title')return a.title.localeCompare(b.title,'pl');return order==='oldest'?date(a)-date(b):date(b)-date(a)});
+ el('count').textContent=filtered.length+' wyników z '+offers.length+' w bazie';
+ el('resulttitle').textContent='Oferty ('+filtered.length+')';
+ var root=el('results');root.replaceChildren();
+ if(!filtered.length){root.appendChild(make('p','muted','Nie znaleziono ofert spełniających filtry. Spróbuj zmienić źródło lub frazę.'));return}
+ filtered.forEach(function(o){var article=make('article','card offer');
+ var row=make('div','chips');row.appendChild(make('span','chip',labelSource(o)));if(o.verified_at)row.appendChild(make('span','chip good','Sprawdzono '+o.verified_at));
+ else row.appendChild(make('span','chip warn','Do weryfikacji'));article.appendChild(row);
+ article.appendChild(make('h3','',o.title));article.appendChild(make('p','muted',o.description||'Opis u źródła'));
+ article.appendChild(make('div','meta','Znaleziono: '+safeDate(o.discovered_at||o.verified_at)));
+ var foot=make('div','foot');var a=make('a','','Otwórz ofertę ↗');a.href=o.url;a.target='_blank';a.rel='noopener noreferrer';foot.appendChild(a);
+ var b=make('button','heart',favorites[o.url]?'★':'☆');b.type='button';b.setAttribute('aria-label',favorites[o.url]?'Usuń z zapisanych':'Zapisz ofertę');
+ b.onclick=function(){if(favorites[o.url])delete favorites[o.url];else favorites[o.url]=true;try{localStorage.setItem('radar-favorites-v1',JSON.stringify(favorites))}catch(e){}draw()};
+ foot.appendChild(b);article.appendChild(foot);root.appendChild(article)})}
+function scanStatus(d){
+ var last=Date.parse(d.updated_at||''),h=(Date.now()-last)/3600000;
+ el('status').textContent='Ostatni skan: '+safeDate(d.updated_at)+(d.status?' · '+d.status:'');
+ var freshness=el('fresh');freshness.textContent=!isFinite(h)?'Nieznana aktualność':h<9?'Skan aktualny':'Skan opóźniony';freshness.className='chip '+(isFinite(h)&&h<9?'good':'warn');
+ var sh=d.source_health||{},sources=sh.direct_sources||{};
+ el('sourcehealth').textContent='W ostatnim skanie: OLX '+(sources.olx===undefined?'brak danych':sources.olx)+', Otodom '+(sources.otodom===undefined?'brak danych':sources.otodom)+', Pośrednik '+(sources.posrednik===undefined?'brak danych':sources.posrednik)+', kancelaria '+(sources.kancelaria_czestochowa===undefined?'brak danych':sources.kancelaria_czestochowa)+', portal komorniczy '+(sources.komornik_portal===undefined?'brak danych':sources.komornik_portal)+'. Wyszukiwarki: '+(sh.responding===undefined?'?':sh.responding)+'/'+(sh.queries===undefined?'?':sh.queries)+' zapytań z trafieniami.';
+ el('newcount').textContent='Nowo znalezione w skanie: '+(sh.new===undefined?'?':sh.new)}
+async function load(){
+ el('reload').disabled=true;
+ try{var r=await fetch('/api/offers?ts='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);
+ var d=await r.json();if(!Array.isArray(d.offers))throw Error('Nieprawidłowe dane');
+ offers=d.offers;scanStatus(d);draw()}catch(e){el('status').textContent='Błąd aktualizacji: '+e.message+' — spróbuj ponownie';if(offers.length)draw()}finally{el('reload').disabled=false}}
+['search','source','kind','order','saved'].forEach(function(id){el(id).addEventListener(id==='search'?'input':'change',draw)});
+el('reload').addEventListener('click',load);
+document.addEventListener('visibilitychange',function(){if(!document.hidden)load()});
+load();setInterval(function(){if(!document.hidden)load()},60000);
+})();
+</script>
+</body></html>
