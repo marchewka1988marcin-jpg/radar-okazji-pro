@@ -60,7 +60,9 @@ def official_notices():
  for kind in ["obwieszczenia-o-licytacji","obwieszczenia-o-terminie-opisu-i-oszacowania"]:
   url="https://licytacje.komornik.pl/wyszukiwarka/"+kind
   try:
-   r=requests.get(url,headers=HEAD,timeout=(5,18));r.raise_for_status()
+   r=requests.get(url,headers=HEAD,timeout=(5,18))
+   if r.status_code==404: r=requests.get(url+"?page=1",headers=HEAD,timeout=(5,18))
+   r.raise_for_status()
    soup=BeautifulSoup(r.text,"html.parser")
    for a in soup.select("a.notice[href]"):
     title=" ".join(a.stripped_strings)
