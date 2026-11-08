@@ -92,7 +92,7 @@ function host(o){try{return new URL(o.url).hostname.replace(/^www\./,'')}catch(e
 function labelSource(o){var h=host(o);if(h.indexOf('olx.pl')>=0)return 'OLX';if(h.indexOf('otodom.pl')>=0)return 'Otodom';if(h.indexOf('posrednik.pl')>=0)return 'Pośrednik';if(h.indexOf('gratka.pl')>=0)return 'Gratka';if(h.indexOf('komornik.pl')>=0)return 'Komornik';return 'Inne / BIP'}
 function kind(o){var k=(o.category||'').toLowerCase();if(k)return k;var h=(o.title||'').toLowerCase(),s=(o.description||'').toLowerCase();if((o.query||'').toLowerCase().indexOf('komornik')>=0||/licytacja|oszacowanie|obwieszczenie/.test(h))return 'licytacje';if(/mieszkan|apartament|kawalerka|lokal mieszkalny/.test(h))return 'mieszkania';if(/dom\b|domu\b|bliźniak|szeregówk/.test(h))return 'domy';if(/działk|grunt|roln|budowlan/.test(h))return 'dzialki';return /grunt|działk/.test(s)?'dzialki':''}
 function date(o){return Date.parse(o.discovered_at||o.verified_at||'')||0}
-function safeDate(s){if(!s)return 'brak daty';var d=new Date(s);return isNaN(d.getTime())?'brak daty':d.toLocaleString('pl-PL',{day:'2-digit',month:'2-digit',year:'numeric',hour:s.indexOf('T')>=0?'2-digit':undefined,minute:s.indexOf('T')>=0?'2-digit':undefined})}
+function safeDate(s){if(!s)return 'brak daty';var d=new Date(s);return isNaN(d.getTime())?'brak daty':d.toLocaleString('pl-PL',{timeZone:'Europe/Warsaw',day:'2-digit',month:'2-digit',year:'numeric',hour:s.indexOf('T')>=0?'2-digit':undefined,minute:s.indexOf('T')>=0?'2-digit':undefined})}
 function make(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
 function draw(){
  var q=el('search').value.trim().toLocaleLowerCase('pl-PL'),src=el('source').value,k=el('kind').value,only=el('saved').checked;
