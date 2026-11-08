@@ -156,6 +156,10 @@ def olx_listings():
    url=f"https://www.olx.pl/nieruchomosci/{kind}/sprzedaz/{place}/"
    try:
     r=requests.get(url,headers={**HEAD,"Accept-Language":"pl-PL,pl;q=0.9"},timeout=(5,16))
+    if getattr(r,"status_code",200) in (401,403,429):
+     SOURCE_ERRORS.append("OLX: HTTP "+str(r.status_code)+" — automatyczny dostęp zablokowany")
+     print("OLX access blocked: HTTP",r.status_code,file=sys.stderr)
+     return
     r.raise_for_status()
     soup=BeautifulSoup(r.text,"html.parser")
     cards=soup.select('[data-cy="l-card"]')
