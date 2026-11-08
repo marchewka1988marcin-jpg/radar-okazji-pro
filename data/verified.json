@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T06:48:25.325188+00:00",
+  "updated_at": "2026-11-08T06:52:31.773411+00:00",
   "offers": [
     {
       "title": "Częstochowa — grunt z budynkiem handlowo-usługowym, II e-licytacja",
@@ -58,13 +58,53 @@
       "verified_at": "2026-11-07"
     },
     {
+      "title": "Komfortowe mieszkanie po generalnym remoncie – centrum Myszkowa",
+      "url": "https://gratka.pl/nieruchomosci/mieszkanie-myszkowski-myszkow/oi/49436635",
+      "description": "Sprzedaż · 399 000 zł · Myszków, myszkowski, śląskie",
+      "query": "Gratka — ogłoszenie sprzedaży",
+      "source": "Gratka",
+      "category": "mieszkania",
+      "verified_at": null,
+      "discovered_at": "2026-11-08T06:52:47.924015+00:00"
+    },
+    {
+      "title": "Budowlana. Wszystkie media. W otoczeniu  nowe domy.  Dobra komunikacja.",
+      "url": "https://gratka.pl/nieruchomosci/dzialka-czestochowski-konopiska-swierkowa/oi/26988955",
+      "description": "Sprzedaż · 179 800 zł · Świerkowa, Konopiska, Konopiska, częstochowski, śląskie",
+      "query": "Gratka — ogłoszenie sprzedaży",
+      "source": "Gratka",
+      "category": "dzialki",
+      "verified_at": null,
+      "discovered_at": "2026-11-08T06:52:46.079528+00:00"
+    },
+    {
+      "title": "Sprzedam atrakcyjne mieszkanie w nowym apartamentowcu.",
+      "url": "https://gratka.pl/nieruchomosci/mieszkanie-czestochowa-wrzosowiak-botaniczna/oi/49591431",
+      "description": "Sprzedaż · 429 000 zł · Botaniczna, Wrzosowiak, Częstochowa, śląskie",
+      "query": "Gratka — ogłoszenie sprzedaży",
+      "source": "Gratka",
+      "category": "mieszkania",
+      "verified_at": null,
+      "discovered_at": "2026-11-08T06:52:43.839794+00:00"
+    },
+    {
+      "title": "Mieszkanie po generalnym remoncie 57 m², 4 pokoje, balkon, piwnica",
+      "url": "https://gratka.pl/nieruchomosci/mieszkanie-czestochowa-tysiaclecie-gabrieli-zapolskiej/oi/49577791",
+      "description": "Sprzedaż · 485 000 zł · Gabrieli Zapolskiej, Tysiąclecie, Częstochowa, śląskie",
+      "query": "Gratka — ogłoszenie sprzedaży",
+      "source": "Gratka",
+      "category": "mieszkania",
+      "verified_at": null,
+      "discovered_at": "2026-11-08T06:52:43.836832+00:00"
+    },
+    {
       "title": "2-pokojowe mieszkanie 43m2 + balkon Bezpośrednio",
       "url": "https://www.otodom.pl/pl/oferta/2-pokojowe-mieszkanie-43m2-balkon-bezposrednio-ID4z1DU",
       "description": "Otodom · oferta sprzedaży · W tej inwestycji znajdziesz ogłoszenia, spełniające Twoje kryteria W budowie Skontaktuj się z opiekunem ogłoszenia Sebastian Wygaś Opiekun ogłoszenia Kontakt 1 / 14 Bufalo Park ul. Bialska/Kaspra del Bufalo, Grabówka, Częstochowa, śląskie od 7900 zł/m² Szacowana realizacja inwestycji 4 kwartał 2026 ",
       "query": "Otodom — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:16:36.254900+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "2-pokojowe mieszkanie 38m2 + balkon",
@@ -73,7 +113,7 @@
       "query": "Otodom — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:16:36.254784+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "80 m2, ogródek, pompa ciepła – Częstochowa",
@@ -82,7 +122,7 @@
       "query": "Otodom — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:16:36.253597+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "Ogrzewanie podłogowe, pompa ciepła, ogródek",
@@ -91,7 +131,7 @@
       "query": "Otodom — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:16:36.253472+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "Nieruchomość — licytacja komornicza",
@@ -100,7 +140,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345385+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "lokal mieszkalny o nr KW CZ1C/00145017/2",
@@ -109,7 +149,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345486+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "Dom wraz działkami 25 627 m2",
@@ -118,7 +158,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345565+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "nieruchomość gruntowa KW CZ1C/00067472/8 (na zasadzie wspólności ustawowej majątkowej małżeńskiej)",
@@ -127,7 +167,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345641+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "lokal użytkowy CZ1C/00107419/2",
@@ -136,7 +176,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345715+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "nieruchomość gruntowa zabudowana",
@@ -145,7 +185,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345788+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "DOM, 176 m2, działka 400 m2, ul. Papierowa Zawodzie Cz-wa, 5 pokoi, kuchnia, 2 łazienki, garaż, kostka brukowa, do remontu, możliwa zamiana na mniejszy",
@@ -154,7 +194,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:01.952137+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "DZIAŁKA budowlana, 935 m2, Radomsko",
@@ -163,7 +203,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:01.952468+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "M-3, 44 m2, Trzech Wieszczy",
@@ -172,7 +212,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:01.952690+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "Dom z działka na Stradomiu",
@@ -181,7 +221,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:01.952943+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "M-3, 49 m2",
@@ -190,7 +230,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:01.953270+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     },
     {
       "title": "mieszkanie 1pokojowe, kawalerka naprzeciw Politechniki, ul Dąbrowskiego, parter",
@@ -199,25 +239,27 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:01.953517+00:00",
-      "last_seen_at": "2026-11-08T06:48:25.325188+00:00"
+      "last_seen_at": "2026-11-08T06:52:31.773411+00:00"
     }
   ],
-  "status": "Bezpośrednie źródła: komornik 0, kancelaria 6, Pośrednik 6. Wyszukiwarki RSS z trafieniami: 0/21. Otodom: 4, OLX: 0, BIP: 0. Nowych: 0. Weryfikuj u źródła.",
+  "status": "Bezpośrednie źródła: komornik 0, kancelaria 6, Pośrednik 6. Wyszukiwarki RSS z trafieniami: 0/21. Otodom: 4, OLX: 0, BIP: 0, Gratka: 4. Nowych: 4. Weryfikuj u źródła.",
   "source_health": {
     "queries": 21,
     "responding": 0,
-    "new": 0,
+    "new": 4,
     "direct_sources": {
       "komornik_portal": 0,
       "kancelaria_czestochowa": 6,
       "posrednik": 6,
       "otodom": 4,
       "olx": 0,
-      "bip_blachownia": 0
+      "bip_blachownia": 0,
+      "gratka": 4
     },
-    "scan_completed_at": "2026-11-08T06:48:25.325188+00:00",
+    "scan_completed_at": "2026-11-08T06:52:31.773411+00:00",
     "source_errors": [
-      "OLX: HTTP 403 — automatyczny dostęp zablokowany"
+      "OLX: HTTP 403 — automatyczny dostęp zablokowany",
+      "Portal komorniczy: 404 Client Error: Not Found for url: https://licytacje.komornik.pl/wyszukiwarka/obwieszcze"
     ]
   }
 }
