@@ -35,6 +35,7 @@ PROPERTY=re.compile(r"nieruchom|dzia[łl]k|lokal|mieszkan|dom\b|grunt|licytac|pr
 TRUSTED=re.compile(r"(?:olx\.pl|otodom\.pl|posrednik\.pl|licytacje\.komornik\.pl|listaprzetargow\.pl|licytor\.pl|adradar\.pl|aukcjeskarbowe\.pl|(?:^|\.)bip\.|(?:^|\.)gov\.pl|(?:^|\.)kowa?nr?\.gov\.pl)",re.I)
 LOCAL=re.compile(r"blachown|cz[eę]stochow|k[łl]obuck|konopisk|wr[eę]czyc|poczesn|myszk[oó]w|olsztyn|k[łl]omnic|koniecpol|herby|lubliniec|kozieg[łl]ow|poraj|mst[oó]w|przyr[oó]w|r[eę]dzin|kamienic[aey] polsk|jan[oó]w",re.I)
 HEAD={"User-Agent":"Mozilla/5.0 (compatible; RadarOkazji/1.0; public search discovery)"}
+SOURCE_ERRORS=[]
 def get_items(url):
  r=requests.get(url,headers=HEAD,timeout=(5,12))
  r.raise_for_status()
@@ -68,7 +69,8 @@ def official_notices():
     if not LOCAL.search(title): continue
     stage="Licytacja" if kind=="obwieszczenia-o-licytacji" else "Opis i oszacowanie (przed licytacją)"
     yield {"title":stage+" — "+title[:150],"url":link,"description":"Oficjalny portal komorniczy. "+title[:350],"query":"Komornik — oficjalne obwieszczenie","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
-  except requests.RequestException as exc: print("official source error",str(exc)[:120],file=sys.stderr)
+  except requests.RequestException as exc: SOURCE_ERRORS.append("Portal komorniczy: "+str(exc)[:90])
+   print("official source error",str(exc)[:120],file=sys.stderr)
 
 def bailiff_office():
  """Official local bailiff's public auction list; excludes cars and finished sales."""
@@ -84,7 +86,8 @@ def bailiff_office():
    if not title: title="Nieruchomość — licytacja komornicza"
    details=" ".join(card.stripped_strings)
    yield {"title":title[:180],"url":a["href"],"description":"Komornik Częstochowa · "+details[:380],"query":"Licytacja — kancelaria komornicza Częstochowa","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
- except requests.RequestException as exc: print("bailiff office error",str(exc)[:120],file=sys.stderr)
+ except requests.RequestException as exc: SOURCE_ERRORS.append("Kancelaria: "+str(exc)[:90])
+  print("bailiff office error",str(exc)[:120],file=sys.stderr)
 
 def posrednik_listings():
  """Public sale cards from Pośrednik Częstochowa, not rental or swaps."""
@@ -106,7 +109,8 @@ def posrednik_listings():
    link=urllib.parse.urljoin(url,a["href"])
    desc="Sprzedaż · "+(price.get_text(" ",strip=True) if price else "cena niepodana")+" · "+location
    yield {"title":title.get_text(" ",strip=True)[:180],"url":link,"description":desc[:380],"query":"Pośrednik — ogłoszenie sprzedaży","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
- except requests.RequestException as exc: print("posrednik error",str(exc)[:120],file=sys.stderr)
+ except requests.RequestException as exc: SOURCE_ERRORS.append("Pośrednik: "+str(exc)[:90])
+  print("posrednik error",str(exc)[:120],file=sys.stderr)
 
 def otodom_listings():
  """Public Otodom sale results; no results reported if access is blocked."""
@@ -133,7 +137,8 @@ def otodom_listings():
     details=" ".join(card.stripped_strings)[:500] if card else title
     if not LOCAL.search(details): continue
     yield {"title":title[:180],"url":link,"description":"Otodom · oferta sprzedaży · "+details[:300],"query":"Otodom — ogłoszenie sprzedaży","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
-  except requests.RequestException as exc: print("otodom unavailable",str(exc)[:140],file=sys.stderr)
+  except requests.RequestException as exc: SOURCE_ERRORS.append("Otodom: "+str(exc)[:90])
+   print("otodom unavailable",str(exc)[:140],file=sys.stderr)
 
 
 def olx_listings():
@@ -168,8 +173,38 @@ def olx_listings():
             "query":"OLX — ogłoszenie sprzedaży","source":"OLX","category":kind,
             "verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
    except requests.RequestException as exc:
+    SOURCE_ERRORS.append("OLX: "+str(exc).split("for url:")[0][:70])
     print("OLX source unavailable:",kind,place,str(exc)[:110],file=sys.stderr)
    time.sleep(0.35)
+
+
+def bip_blachownia():
+ """Watch official municipal property-sale notices; skip results and rentals."""
+ url="https://blachownia.bip.net.pl/kategorie/175-przetargi-na-zbycie-nieruchomosci-stanowiacych-wlasnosc-gminy-blachownia"
+ try:
+  r=requests.get(url,headers=HEAD,timeout=(5,16));r.raise_for_status()
+  soup=BeautifulSoup(r.text,"html.parser")
+  for li in soup.select("li"):
+   a=li.select_one('a[href*="/artykuly/"]')
+   if not a: continue
+   title=" ".join(a.stripped_strings)
+   low=title.lower()
+   if not re.search(r"przetarg|sprzeda[żz]|zbyci",low): continue
+   if re.search(r"wynik|negatywn|najem|dzier[żz]aw|u[żz]yczen|bezprzetarg",low): continue
+   stamp=re.search(r"Opublikowano:\s*(20\d{2}-\d\d-\d\d)",li.get_text(" ",strip=True))
+   published=stamp.group(1) if stamp else None
+   if published:
+    try:
+     if datetime.fromisoformat(published).replace(tzinfo=timezone.utc)<datetime.now(timezone.utc)-timedelta(days=45): continue
+    except ValueError: continue
+   link=urllib.parse.urljoin(url,a.get("href",""))
+   if urllib.parse.urlsplit(link).hostname!="blachownia.bip.net.pl":continue
+   yield {"title":title[:180],"url":link,"description":"Oficjalny BIP Blachowni · sprzedaż nieruchomości · publikacja "+(published or "data nieznana"),
+          "query":"BIP Blachownia — ogłoszenie przetargowe","source":"BIP Blachownia","verified_at":None,
+          "discovered_at":datetime.now(timezone.utc).isoformat()}
+ except requests.RequestException as exc:
+  SOURCE_ERRORS.append("BIP Blachownia: "+str(exc)[:90])
+  print("BIP Blachownia unavailable",str(exc)[:110],file=sys.stderr)
 
 def main():
  data=json.loads(OUT.read_text(encoding="utf-8"))
@@ -177,8 +212,8 @@ def main():
  original=data.get("offers",[])
  offers={o["url"]:o for o in original if o.get("url") and (o.get("verified_at") or o.get("discovered_at")) and not ("/hpr/pl/oferta/" in o["url"])}
  discovered=0; worked=0
- source_counts={"komornik_portal":0,"kancelaria_czestochowa":0,"posrednik":0,"otodom":0,"olx":0}
- for name,fn in [("komornik_portal",official_notices),("kancelaria_czestochowa",bailiff_office),("posrednik",posrednik_listings),("otodom",otodom_listings),("olx",olx_listings)]:
+ source_counts={"komornik_portal":0,"kancelaria_czestochowa":0,"posrednik":0,"otodom":0,"olx":0,"bip_blachownia":0}
+ for name,fn in [("komornik_portal",official_notices),("kancelaria_czestochowa",bailiff_office),("posrednik",posrednik_listings),("otodom",otodom_listings),("olx",olx_listings),("bip_blachownia",bip_blachownia)]:
   hits=list(fn())
   source_counts[name]=len(hits)
   for o in hits:
@@ -207,7 +242,7 @@ def main():
     if datetime.fromisoformat(o.get("last_seen_at") or o.get("discovered_at",""))>=cutoff: final.append(o)
    except ValueError: pass
  final.sort(key=lambda x: (bool(x.get("verified_at")),x.get("last_seen_at") or x.get("discovered_at") or ""),reverse=True)
- data.update({"updated_at":now.isoformat(),"offers":final[:250],"status":f"Bezpośrednie źródła: komornik {source_counts['komornik_portal']}, kancelaria {source_counts['kancelaria_czestochowa']}, Pośrednik {source_counts['posrednik']}. Wyszukiwarki RSS z trafieniami: {worked}/{len(QUERIES)}. Otodom: {source_counts['otodom']}, OLX: {source_counts['olx']}. Nowych: {discovered}. Weryfikuj u źródła.","source_health":{"queries":len(QUERIES),"responding":worked,"new":discovered,"direct_sources":source_counts,"scan_completed_at":now.isoformat()}})
+ data.update({"updated_at":now.isoformat(),"offers":final[:250],"status":f"Bezpośrednie źródła: komornik {source_counts['komornik_portal']}, kancelaria {source_counts['kancelaria_czestochowa']}, Pośrednik {source_counts['posrednik']}. Wyszukiwarki RSS z trafieniami: {worked}/{len(QUERIES)}. Otodom: {source_counts['otodom']}, OLX: {source_counts['olx']}, BIP: {source_counts['bip_blachownia']}. Nowych: {discovered}. Weryfikuj u źródła.","source_health":{"queries":len(QUERIES),"responding":worked,"new":discovered,"direct_sources":source_counts,"scan_completed_at":now.isoformat(),"source_errors":sorted(set(SOURCE_ERRORS))[:12]}})
  OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  print(data["status"],"Total",len(final))
 if __name__=="__main__":main()
