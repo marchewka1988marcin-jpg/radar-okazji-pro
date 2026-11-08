@@ -214,14 +214,49 @@ def bip_blachownia():
   SOURCE_ERRORS.append("BIP Blachownia: "+str(exc)[:90])
   print("BIP Blachownia unavailable",str(exc)[:110],file=sys.stderr)
 
+
+def gratka_listings():
+ """Read sale cards with canonical source links from public Gratka category pages."""
+ for place in ("blachownia","czestochowa","klobuck","konopiska","lubliniec","myszkow"):
+  url="https://gratka.pl/nieruchomosci/"+place
+  try:
+   r=requests.get(url,headers={**HEAD,"Accept-Language":"pl-PL,pl;q=0.9"},timeout=(5,16))
+   if getattr(r,"status_code",200) in (401,403,429):
+    SOURCE_ERRORS.append("Gratka: HTTP "+str(r.status_code))
+    return
+   r.raise_for_status()
+   soup=BeautifulSoup(r.text,"html.parser")
+   for card in soup.select('[data-cy="card"]'):
+    link_el=card.select_one("a.property-card__link[href]")
+    title_el=card.select_one('[data-cy="propertyCardTitle"]')
+    location_el=card.select_one('[data-cy="propertyCardLocation"]')
+    price_el=card.select_one('[data-cy="propertyCardPrice"]')
+    if not link_el or not title_el or not location_el: continue
+    link=urllib.parse.urljoin(url,link_el.get("href","")).split("?")[0]
+    parsed=urllib.parse.urlsplit(link)
+    if parsed.hostname not in ("gratka.pl","www.gratka.pl") or not parsed.path.startswith("/nieruchomosci/") or "/oi/" not in parsed.path:continue
+    title=title_el.get_text(" ",strip=True)
+    location=location_el.get_text(" ",strip=True)
+    if not title or not LOCAL.search(location): continue
+    price=price_el.get_text(" ",strip=True) if price_el else "cena do sprawdzenia"
+    slug=parsed.path.lower()
+    category="mieszkania" if "mieszkanie-" in slug else "domy" if "dom-" in slug else "dzialki" if "dzialka-" in slug else ""
+    yield {"title":title[:180],"url":link,"description":("Sprzedaż · "+price+" · "+location)[:380],
+           "query":"Gratka — ogłoszenie sprzedaży","source":"Gratka","category":category,
+           "verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
+  except requests.RequestException as exc:
+   SOURCE_ERRORS.append("Gratka: "+str(exc)[:85])
+   print("Gratka unavailable",place,str(exc)[:110],file=sys.stderr)
+  time.sleep(0.3)
+
 def main():
  data=json.loads(OUT.read_text(encoding="utf-8"))
  now=datetime.now(timezone.utc)
  original=data.get("offers",[])
  offers={o["url"]:o for o in original if o.get("url") and (o.get("verified_at") or o.get("discovered_at")) and not ("/hpr/pl/oferta/" in o["url"])}
  discovered=0; worked=0
- source_counts={"komornik_portal":0,"kancelaria_czestochowa":0,"posrednik":0,"otodom":0,"olx":0,"bip_blachownia":0}
- for name,fn in [("komornik_portal",official_notices),("kancelaria_czestochowa",bailiff_office),("posrednik",posrednik_listings),("otodom",otodom_listings),("olx",olx_listings),("bip_blachownia",bip_blachownia)]:
+ source_counts={"komornik_portal":0,"kancelaria_czestochowa":0,"posrednik":0,"otodom":0,"olx":0,"bip_blachownia":0,"gratka":0}
+ for name,fn in [("komornik_portal",official_notices),("kancelaria_czestochowa",bailiff_office),("posrednik",posrednik_listings),("otodom",otodom_listings),("olx",olx_listings),("bip_blachownia",bip_blachownia),("gratka",gratka_listings)]:
   hits=list(fn())
   source_counts[name]=len(hits)
   for o in hits:
@@ -250,7 +285,7 @@ def main():
     if datetime.fromisoformat(o.get("last_seen_at") or o.get("discovered_at",""))>=cutoff: final.append(o)
    except ValueError: pass
  final.sort(key=lambda x: (bool(x.get("verified_at")),x.get("last_seen_at") or x.get("discovered_at") or ""),reverse=True)
- data.update({"updated_at":now.isoformat(),"offers":final[:250],"status":f"Bezpośrednie źródła: komornik {source_counts['komornik_portal']}, kancelaria {source_counts['kancelaria_czestochowa']}, Pośrednik {source_counts['posrednik']}. Wyszukiwarki RSS z trafieniami: {worked}/{len(QUERIES)}. Otodom: {source_counts['otodom']}, OLX: {source_counts['olx']}, BIP: {source_counts['bip_blachownia']}. Nowych: {discovered}. Weryfikuj u źródła.","source_health":{"queries":len(QUERIES),"responding":worked,"new":discovered,"direct_sources":source_counts,"scan_completed_at":now.isoformat(),"source_errors":sorted(set(SOURCE_ERRORS))[:12]}})
+ data.update({"updated_at":now.isoformat(),"offers":final[:250],"status":f"Bezpośrednie źródła: komornik {source_counts['komornik_portal']}, kancelaria {source_counts['kancelaria_czestochowa']}, Pośrednik {source_counts['posrednik']}. Wyszukiwarki RSS z trafieniami: {worked}/{len(QUERIES)}. Otodom: {source_counts['otodom']}, OLX: {source_counts['olx']}, BIP: {source_counts['bip_blachownia']}, Gratka: {source_counts['gratka']}. Nowych: {discovered}. Weryfikuj u źródła.","source_health":{"queries":len(QUERIES),"responding":worked,"new":discovered,"direct_sources":source_counts,"scan_completed_at":now.isoformat(),"source_errors":sorted(set(SOURCE_ERRORS))[:12]}})
  OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  print(data["status"],"Total",len(final))
 if __name__=="__main__":main()
