@@ -96,7 +96,7 @@ function safeDate(s){if(!s)return 'brak daty';var d=new Date(s);return isNaN(d.g
 function make(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
 function draw(){
  var q=el('search').value.trim().toLocaleLowerCase('pl-PL'),src=el('source').value,k=el('kind').value,only=el('saved').checked;
- var filtered=offers.filter(function(o){if(!o||!o.url||!o.title)return false;var h=host(o);if(src==='other'){if(['olx.pl','otodom.pl','posrednik.pl','licytacje.komornik.pl'].includes(h))return false}
+ var filtered=offers.filter(function(o){if(!o||!o.url||!o.title||!/^https:\/\//.test(o.url))return false;var h=host(o);if(src==='other'){if(['olx.pl','otodom.pl','posrednik.pl','licytacje.komornik.pl'].includes(h))return false}
  else if(src&&h.indexOf(src)<0)return false;
  if(k&&kind(o)!==k)return false;if(only&&!favorites[o.url])return false;
  return (o.title+' '+(o.description||'')+' '+(o.query||'')+' '+(o.location||'')).toLocaleLowerCase('pl-PL').includes(q)});
@@ -117,10 +117,10 @@ function draw(){
  foot.appendChild(b);article.appendChild(foot);root.appendChild(article)})}
 function scanStatus(d){
  var last=Date.parse(d.updated_at||''),h=(Date.now()-last)/3600000;
- el('status').textContent='Ostatni skan: '+safeDate(d.updated_at)+(d.status?' · '+d.status:'');
+ el('status').textContent=(d.warning?'⚠️ '+d.warning+' · ':'')+'Ostatni skan: '+safeDate(d.updated_at)+(d.status?' · '+d.status:'');
  var freshness=el('fresh');freshness.textContent=!isFinite(h)?'Nieznana aktualność':h<9?'Skan aktualny':'Skan opóźniony';freshness.className='chip '+(isFinite(h)&&h<9?'good':'warn');
  var sh=d.source_health||{},sources=sh.direct_sources||{};
- el('sourcehealth').textContent='W ostatnim skanie: OLX '+(sources.olx===undefined?'brak danych':sources.olx)+', Otodom '+(sources.otodom===undefined?'brak danych':sources.otodom)+', Pośrednik '+(sources.posrednik===undefined?'brak danych':sources.posrednik)+', kancelaria '+(sources.kancelaria_czestochowa===undefined?'brak danych':sources.kancelaria_czestochowa)+', portal komorniczy '+(sources.komornik_portal===undefined?'brak danych':sources.komornik_portal)+'. Wyszukiwarki: '+(sh.responding===undefined?'?':sh.responding)+'/'+(sh.queries===undefined?'?':sh.queries)+' zapytań z trafieniami.';
+ el('sourcehealth').textContent='W ostatnim skanie: OLX '+(sources.olx===undefined?'brak danych':sources.olx)+', Otodom '+(sources.otodom===undefined?'brak danych':sources.otodom)+', Pośrednik '+(sources.posrednik===undefined?'brak danych':sources.posrednik)+', kancelaria '+(sources.kancelaria_czestochowa===undefined?'brak danych':sources.kancelaria_czestochowa)+', portal komorniczy '+(sources.komornik_portal===undefined?'brak danych':sources.komornik_portal)+'. Wyszukiwarki: '+(sh.responding===undefined?'?':sh.responding)+'/'+(sh.queries===undefined?'?':sh.queries)+' zapytań z trafieniami.'+((Array.isArray(sh.source_errors)&&sh.source_errors.length)?' Niedostępne: '+sh.source_errors.join('; '):'');
  el('newcount').textContent='Nowo znalezione w skanie: '+(sh.new===undefined?'?':sh.new)}
 async function load(){
  el('reload').disabled=true;
