@@ -69,7 +69,8 @@ def official_notices():
     if not LOCAL.search(title): continue
     stage="Licytacja" if kind=="obwieszczenia-o-licytacji" else "Opis i oszacowanie (przed licytacją)"
     yield {"title":stage+" — "+title[:150],"url":link,"description":"Oficjalny portal komorniczy. "+title[:350],"query":"Komornik — oficjalne obwieszczenie","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
-  except requests.RequestException as exc: SOURCE_ERRORS.append("Portal komorniczy: "+str(exc)[:90])
+  except requests.RequestException as exc:
+   SOURCE_ERRORS.append("Portal komorniczy: "+str(exc)[:90])
    print("official source error",str(exc)[:120],file=sys.stderr)
 
 def bailiff_office():
@@ -137,7 +138,8 @@ def otodom_listings():
     details=" ".join(card.stripped_strings)[:500] if card else title
     if not LOCAL.search(details): continue
     yield {"title":title[:180],"url":link,"description":"Otodom · oferta sprzedaży · "+details[:300],"query":"Otodom — ogłoszenie sprzedaży","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
-  except requests.RequestException as exc: SOURCE_ERRORS.append("Otodom: "+str(exc)[:90])
+  except requests.RequestException as exc:
+   SOURCE_ERRORS.append("Otodom: "+str(exc)[:90])
    print("otodom unavailable",str(exc)[:140],file=sys.stderr)
 
 
