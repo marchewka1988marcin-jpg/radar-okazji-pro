@@ -1,0 +1,11 @@
+{
+  "name": "Radar Okazji PRO — Blachownia",
+  "short_name": "Radar Okazji",
+  "description": "Automatyczny radar ofert nieruchomości w okolicach Blachowni",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0c1523",
+  "theme_color": "#101c2e",
+  "lang": "pl"
+}
