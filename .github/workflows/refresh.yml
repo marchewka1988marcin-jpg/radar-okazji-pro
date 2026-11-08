@@ -4,6 +4,10 @@ on:
     paths:
       - 'scripts/refresh.py'
       - '.github/workflows/refresh.yml'
+      - 'app.py'
+      - 'static/index.html'
+      - 'static/manifest.webmanifest'
+      - 'tests/test_scraper.py'
   workflow_dispatch:
   schedule:
     - cron: '23 5,11,17,23 * * *'
@@ -22,7 +26,22 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install requests==2.32.3 beautifulsoup4==4.12.3
-      - run: python scripts/refresh.py
+      - name: Verify scraper and application code
+        run: |
+          python -m py_compile app.py scripts/refresh.py
+          python -m unittest discover -s tests -v
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path("static/index.html").read_text(encoding="utf-8")
+          matches = re.findall(r"<script[^>]*>(.*?)</script>", html, re.S)
+          if not matches:
+              raise SystemExit("Browser script missing")
+          Path("/tmp/radar-browser.js").write_text("\n".join(matches), encoding="utf-8")
+          PY
+          node --check /tmp/radar-browser.js
+      - name: Scan public listings
+        run: python scripts/refresh.py
       - name: Commit fresh results
         run: |
           git config user.name "radar-okazji-bot"
