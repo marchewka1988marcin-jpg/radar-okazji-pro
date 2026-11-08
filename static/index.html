@@ -67,7 +67,7 @@ footer{padding-top:16px}
 <div class="search-field"><label for="search">Miejscowość, adres, rodzaj</label><input id="search" type="search" placeholder="Np. Blachownia, działka, licytacja…" autocomplete="off"></div>
 <div><label for="source">Źródło</label><select id="source">
 <option value="">Wszystkie</option><option value="olx.pl">OLX</option><option value="otodom.pl">Otodom</option>
-<option value="posrednik.pl">Pośrednik</option><option value="licytacje.komornik.pl">Komornik</option>
+<option value="posrednik.pl">Pośrednik</option><option value="gratka.pl">Gratka</option><option value="licytacje.komornik.pl">Komornik</option>
 <option value="other">Inne / BIP</option></select></div>
 <div><label for="kind">Rodzaj</label><select id="kind">
 <option value="">Wszystkie</option><option value="mieszkania">Mieszkania</option><option value="domy">Domy</option><option value="dzialki">Działki / grunty</option><option value="licytacje">Licytacje i obwieszczenia</option>
@@ -89,14 +89,14 @@ var offers=[], favorites={};
 var el=function(id){return document.getElementById(id)};
 try{favorites=JSON.parse(localStorage.getItem('radar-favorites-v1')||'{}')||{}}catch(e){favorites={}}
 function host(o){try{return new URL(o.url).hostname.replace(/^www\./,'')}catch(e){return ''}}
-function labelSource(o){var h=host(o);if(h.indexOf('olx.pl')>=0)return 'OLX';if(h.indexOf('otodom.pl')>=0)return 'Otodom';if(h.indexOf('posrednik.pl')>=0)return 'Pośrednik';if(h.indexOf('komornik.pl')>=0)return 'Komornik';return 'Inne / BIP'}
+function labelSource(o){var h=host(o);if(h.indexOf('olx.pl')>=0)return 'OLX';if(h.indexOf('otodom.pl')>=0)return 'Otodom';if(h.indexOf('posrednik.pl')>=0)return 'Pośrednik';if(h.indexOf('gratka.pl')>=0)return 'Gratka';if(h.indexOf('komornik.pl')>=0)return 'Komornik';return 'Inne / BIP'}
 function kind(o){var k=(o.category||'').toLowerCase();if(k)return k;var h=(o.title||'').toLowerCase(),s=(o.description||'').toLowerCase();if((o.query||'').toLowerCase().indexOf('komornik')>=0||/licytacja|oszacowanie|obwieszczenie/.test(h))return 'licytacje';if(/mieszkan|apartament|kawalerka|lokal mieszkalny/.test(h))return 'mieszkania';if(/dom\b|domu\b|bliźniak|szeregówk/.test(h))return 'domy';if(/działk|grunt|roln|budowlan/.test(h))return 'dzialki';return /grunt|działk/.test(s)?'dzialki':''}
 function date(o){return Date.parse(o.discovered_at||o.verified_at||'')||0}
 function safeDate(s){if(!s)return 'brak daty';var d=new Date(s);return isNaN(d.getTime())?'brak daty':d.toLocaleString('pl-PL',{day:'2-digit',month:'2-digit',year:'numeric',hour:s.indexOf('T')>=0?'2-digit':undefined,minute:s.indexOf('T')>=0?'2-digit':undefined})}
 function make(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
 function draw(){
  var q=el('search').value.trim().toLocaleLowerCase('pl-PL'),src=el('source').value,k=el('kind').value,only=el('saved').checked;
- var filtered=offers.filter(function(o){if(!o||!o.url||!o.title||!/^https:\/\//.test(o.url))return false;var h=host(o);if(src==='other'){if(['olx.pl','otodom.pl','posrednik.pl','licytacje.komornik.pl'].includes(h))return false}
+ var filtered=offers.filter(function(o){if(!o||!o.url||!o.title||!/^https:\/\//.test(o.url))return false;var h=host(o);if(src==='other'){if(['olx.pl','otodom.pl','posrednik.pl','gratka.pl','licytacje.komornik.pl'].includes(h))return false}
  else if(src&&h.indexOf(src)<0)return false;
  if(k&&kind(o)!==k)return false;if(only&&!favorites[o.url])return false;
  return (o.title+' '+(o.description||'')+' '+(o.query||'')+' '+(o.location||'')).toLocaleLowerCase('pl-PL').includes(q)});
@@ -120,7 +120,7 @@ function scanStatus(d){
  el('status').textContent=(d.warning?'⚠️ '+d.warning+' · ':'')+'Ostatni skan: '+safeDate(d.updated_at)+(d.status?' · '+d.status:'');
  var freshness=el('fresh');freshness.textContent=!isFinite(h)?'Nieznana aktualność':h<9?'Skan aktualny':'Skan opóźniony';freshness.className='chip '+(isFinite(h)&&h<9?'good':'warn');
  var sh=d.source_health||{},sources=sh.direct_sources||{};
- el('sourcehealth').textContent='W ostatnim skanie: OLX '+(sources.olx===undefined?'brak danych':sources.olx)+', Otodom '+(sources.otodom===undefined?'brak danych':sources.otodom)+', Pośrednik '+(sources.posrednik===undefined?'brak danych':sources.posrednik)+', kancelaria '+(sources.kancelaria_czestochowa===undefined?'brak danych':sources.kancelaria_czestochowa)+', portal komorniczy '+(sources.komornik_portal===undefined?'brak danych':sources.komornik_portal)+'. Wyszukiwarki: '+(sh.responding===undefined?'?':sh.responding)+'/'+(sh.queries===undefined?'?':sh.queries)+' zapytań z trafieniami.'+((Array.isArray(sh.source_errors)&&sh.source_errors.length)?' Niedostępne: '+sh.source_errors.join('; '):'');
+ el('sourcehealth').textContent='W ostatnim skanie: OLX '+(sources.olx===undefined?'brak danych':sources.olx)+', Otodom '+(sources.otodom===undefined?'brak danych':sources.otodom)+', Pośrednik '+(sources.posrednik===undefined?'brak danych':sources.posrednik)+', Gratka '+(sources.gratka===undefined?'brak danych':sources.gratka)+', kancelaria '+(sources.kancelaria_czestochowa===undefined?'brak danych':sources.kancelaria_czestochowa)+', portal komorniczy '+(sources.komornik_portal===undefined?'brak danych':sources.komornik_portal)+'. Wyszukiwarki: '+(sh.responding===undefined?'?':sh.responding)+'/'+(sh.queries===undefined?'?':sh.queries)+' zapytań z trafieniami.'+((Array.isArray(sh.source_errors)&&sh.source_errors.length)?' Niedostępne: '+sh.source_errors.join('; '):'');
  el('newcount').textContent='Nowo znalezione w skanie: '+(sh.new===undefined?'?':sh.new)}
 async function load(){
  el('reload').disabled=true;
