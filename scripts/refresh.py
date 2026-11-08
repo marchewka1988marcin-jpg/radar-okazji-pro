@@ -87,7 +87,8 @@ def bailiff_office():
    if not title: title="Nieruchomość — licytacja komornicza"
    details=" ".join(card.stripped_strings)
    yield {"title":title[:180],"url":a["href"],"description":"Komornik Częstochowa · "+details[:380],"query":"Licytacja — kancelaria komornicza Częstochowa","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
- except requests.RequestException as exc: SOURCE_ERRORS.append("Kancelaria: "+str(exc)[:90])
+ except requests.RequestException as exc:
+  SOURCE_ERRORS.append("Kancelaria: "+str(exc)[:90])
   print("bailiff office error",str(exc)[:120],file=sys.stderr)
 
 def posrednik_listings():
@@ -110,7 +111,8 @@ def posrednik_listings():
    link=urllib.parse.urljoin(url,a["href"])
    desc="Sprzedaż · "+(price.get_text(" ",strip=True) if price else "cena niepodana")+" · "+location
    yield {"title":title.get_text(" ",strip=True)[:180],"url":link,"description":desc[:380],"query":"Pośrednik — ogłoszenie sprzedaży","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
- except requests.RequestException as exc: SOURCE_ERRORS.append("Pośrednik: "+str(exc)[:90])
+ except requests.RequestException as exc:
+  SOURCE_ERRORS.append("Pośrednik: "+str(exc)[:90])
   print("posrednik error",str(exc)[:120],file=sys.stderr)
 
 def otodom_listings():
