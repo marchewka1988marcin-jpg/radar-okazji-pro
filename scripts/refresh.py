@@ -135,19 +135,56 @@ def otodom_listings():
     yield {"title":title[:180],"url":link,"description":"Otodom · oferta sprzedaży · "+details[:300],"query":"Otodom — ogłoszenie sprzedaży","verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
   except requests.RequestException as exc: print("otodom unavailable",str(exc)[:140],file=sys.stderr)
 
+
+def olx_listings():
+ """Collect public sale cards from OLX (no account, captcha bypass or paid content).
+ Each card must contain a direct OLX sale URL and a matching locality.
+ """
+ places=("blachownia","czestochowa","klobuck","konopiska","lubliniec","myszkow")
+ kinds=("mieszkania","domy","dzialki")
+ for place in places:
+  for kind in kinds:
+   url=f"https://www.olx.pl/nieruchomosci/{kind}/sprzedaz/{place}/"
+   try:
+    r=requests.get(url,headers={**HEAD,"Accept-Language":"pl-PL,pl;q=0.9"},timeout=(5,16))
+    r.raise_for_status()
+    soup=BeautifulSoup(r.text,"html.parser")
+    cards=soup.select('[data-cy="l-card"]')
+    if not cards: print("OLX no public cards:",kind,place,file=sys.stderr)
+    for card in cards:
+     a=card.select_one('a[data-testid="card-title-link"]')
+     if not a: continue
+     link=urllib.parse.urljoin("https://www.olx.pl/",a.get("href",""))
+     parts=urllib.parse.urlsplit(link)
+     if parts.hostname not in ("www.olx.pl","olx.pl") or not parts.path.startswith("/d/oferta/") or not parts.path.endswith(".html"): continue
+     link=urllib.parse.urlunsplit(("https","www.olx.pl",parts.path,"",""))
+     title=" ".join((a.get("aria-label") or a.get_text(" ",strip=True)).split())
+     loc_el=card.select_one('[data-testid="location-date"]')
+     location=loc_el.get_text(" ",strip=True) if loc_el else ""
+     if not title or not LOCAL.search(location): continue
+     price_el=card.select_one('[data-testid="ad-price"]')
+     price=price_el.get_text(" ",strip=True) if price_el else "cena do sprawdzenia"
+     yield {"title":title[:180],"url":link,"description":f"Sprzedaż · {price} · {location}"[:380],
+            "query":"OLX — ogłoszenie sprzedaży","source":"OLX","category":kind,
+            "verified_at":None,"discovered_at":datetime.now(timezone.utc).isoformat()}
+   except requests.RequestException as exc:
+    print("OLX source unavailable:",kind,place,str(exc)[:110],file=sys.stderr)
+   time.sleep(0.35)
+
 def main():
  data=json.loads(OUT.read_text(encoding="utf-8"))
  now=datetime.now(timezone.utc)
  original=data.get("offers",[])
  offers={o["url"]:o for o in original if o.get("url") and (o.get("verified_at") or o.get("discovered_at")) and not ("/hpr/pl/oferta/" in o["url"])}
  discovered=0; worked=0
- source_counts={"komornik_portal":0,"kancelaria_czestochowa":0,"posrednik":0,"otodom":0}
- for name,fn in [("komornik_portal",official_notices),("kancelaria_czestochowa",bailiff_office),("posrednik",posrednik_listings),("otodom",otodom_listings)]:
+ source_counts={"komornik_portal":0,"kancelaria_czestochowa":0,"posrednik":0,"otodom":0,"olx":0}
+ for name,fn in [("komornik_portal",official_notices),("kancelaria_czestochowa",bailiff_office),("posrednik",posrednik_listings),("otodom",otodom_listings),("olx",olx_listings)]:
   hits=list(fn())
   source_counts[name]=len(hits)
   for o in hits:
    if o["url"] not in offers: offers[o["url"]]=o; discovered+=1
    else:
+    offers[o["url"]].update({k:v for k,v in o.items() if k not in ("verified_at","discovered_at")})
     offers[o["url"]]["last_seen_at"]=now.isoformat()
  for q in QUERIES:
   hits=search(q)
@@ -160,7 +197,7 @@ def main():
     offers[o["url"]]["last_seen_at"]=now.isoformat()
   time.sleep(0.4)
  # Prevent stale unverified search hits from accumulating forever.
- cutoff=now-timedelta(days=35)
+ cutoff=now-timedelta(days=14)
  final=[]
  for o in offers.values():
   if o.get("verified_at"):
@@ -170,7 +207,7 @@ def main():
     if datetime.fromisoformat(o.get("last_seen_at") or o.get("discovered_at",""))>=cutoff: final.append(o)
    except ValueError: pass
  final.sort(key=lambda x: (bool(x.get("verified_at")),x.get("last_seen_at") or x.get("discovered_at") or ""),reverse=True)
- data.update({"updated_at":now.isoformat(),"offers":final[:250],"status":f"Bezpośrednie źródła: komornik {source_counts['komornik_portal']}, kancelaria {source_counts['kancelaria_czestochowa']}, Pośrednik {source_counts['posrednik']}. Wyszukiwarki RSS z trafieniami: {worked}/{len(QUERIES)}. Otodom: {source_counts['otodom']}. Nowych: {discovered}. Weryfikuj u źródła.","source_health":{"queries":len(QUERIES),"responding":worked,"new":discovered,"direct_sources":source_counts}})
+ data.update({"updated_at":now.isoformat(),"offers":final[:250],"status":f"Bezpośrednie źródła: komornik {source_counts['komornik_portal']}, kancelaria {source_counts['kancelaria_czestochowa']}, Pośrednik {source_counts['posrednik']}. Wyszukiwarki RSS z trafieniami: {worked}/{len(QUERIES)}. Otodom: {source_counts['otodom']}, OLX: {source_counts['olx']}. Nowych: {discovered}. Weryfikuj u źródła.","source_health":{"queries":len(QUERIES),"responding":worked,"new":discovered,"direct_sources":source_counts,"scan_completed_at":now.isoformat()}})
  OUT.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  print(data["status"],"Total",len(final))
 if __name__=="__main__":main()
