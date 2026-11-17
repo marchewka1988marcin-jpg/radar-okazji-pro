@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T23:57:39.137871+00:00",
+  "updated_at": "2026-11-17T06:18:44.408679+00:00",
   "offers": [
     {
       "title": "Częstochowa — grunt z budynkiem handlowo-usługowym, II e-licytacja",
@@ -60,42 +60,46 @@
     {
       "title": "Dom Klobuck z działką",
       "url": "https://www.olx.pl/d/oferta/dom-klobuck-z-dzialka-CID3-ID1dirl3.html",
-      "description": "Sprzedaż · 250 000 zł · Kłobuck - Dzisiaj o 19:56",
+      "description": "Sprzedaż · 250 000 zł · Kłobuck - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "domy",
       "verified_at": null,
-      "discovered_at": "2026-11-16T23:58:10.479176+00:00"
+      "discovered_at": "2026-11-16T23:58:10.479176+00:00",
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie Nowe stan deweloperski z miejscem parkingowym 33.82 m",
       "url": "https://www.olx.pl/d/oferta/mieszkanie-nowe-stan-deweloperski-z-miejscem-parkingowym-33-82-m-CID3-ID1dixzm.html",
-      "description": "Sprzedaż · 277 300 zł · Kłobuck - Dzisiaj o 21:26",
+      "description": "Sprzedaż · 277 300 zł · Kłobuck - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
-      "discovered_at": "2026-11-16T23:58:08.210474+00:00"
+      "discovered_at": "2026-11-16T23:58:08.210474+00:00",
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana z warunkami zabudowy, Częstochowa Gnaszyn",
       "url": "https://www.olx.pl/d/oferta/dzialka-budowlana-z-warunkami-zabudowy-czestochowa-gnaszyn-CID3-ID1divxV.html",
-      "description": "Sprzedaż · 590 000 zł do negocjacji · Częstochowa, Lisiniec - Dzisiaj o 21:06",
+      "description": "Sprzedaż · 590 000 zł do negocjacji · Częstochowa, Lisiniec - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "dzialki",
       "verified_at": null,
-      "discovered_at": "2026-11-16T23:58:05.880168+00:00"
+      "discovered_at": "2026-11-16T23:58:05.880168+00:00",
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka 866 m² z potencjałem w spokojnej części Stradomia | Częstochowa",
       "url": "https://www.olx.pl/d/oferta/dzialka-866-m-z-potencjalem-w-spokojnej-czesci-stradomia-czestochowa-CID3-ID1diB7D.html",
-      "description": "Sprzedaż · 295 000 zł do negocjacji · Częstochowa, Stradom - Dzisiaj o 22:58",
+      "description": "Sprzedaż · 295 000 zł do negocjacji · Częstochowa, Stradom - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "dzialki",
       "verified_at": null,
-      "discovered_at": "2026-11-16T23:58:05.879211+00:00"
+      "discovered_at": "2026-11-16T23:58:05.879211+00:00",
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom z dużą działką i potencjałem inwestycyjnym",
@@ -105,7 +109,8 @@
       "source": "OLX",
       "category": "domy",
       "verified_at": null,
-      "discovered_at": "2026-11-16T23:57:56.910648+00:00"
+      "discovered_at": "2026-11-16T23:57:56.910648+00:00",
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom , pawilon handlowy, warsztat, Częstochowa Blachownia, (pod inwestycję) Uwaga niższa cena!",
@@ -115,7 +120,8 @@
       "source": "OLX",
       "category": "domy",
       "verified_at": null,
-      "discovered_at": "2026-11-16T23:57:56.910420+00:00"
+      "discovered_at": "2026-11-16T23:57:56.910420+00:00",
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Nowe Osiedle Domów \" Leśne Zacisze\" ul. Malicka Blachownia",
@@ -125,7 +131,8 @@
       "source": "OLX",
       "category": "domy",
       "verified_at": null,
-      "discovered_at": "2026-11-16T23:57:56.910121+00:00"
+      "discovered_at": "2026-11-16T23:57:56.910121+00:00",
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam działkę budowlaną Myszków Ciszówka",
@@ -136,7 +143,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:47.766710+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "OSTATNIA z 3 niezabudowana działka . W całości budowlana , uzbrojona w przyłącze wody i prądu w Myszkowie ul. Żarecka 10 M z MPZT .",
@@ -147,7 +154,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:47.766487+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana Myszków Ciszówka ul. Cicha 19 arów",
@@ -158,7 +165,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:47.766314+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana 4622 m2 Myszkow ul. Boczna",
@@ -169,7 +176,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:47.766083+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "NOWA CENA Sprzedam działkę budowlaną - ŻARKI LETNISKO",
@@ -180,7 +187,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:47.765898+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Atrakcyjne Działki na sprzedaż Myszków -budowlano-rolne",
@@ -191,7 +198,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:47.765690+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowalna Myszków- Będusz",
@@ -202,7 +209,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:47.765518+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka Budowlana uzbrojona lasy i nieużytki",
@@ -213,18 +220,18 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:47.765344+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam działkę budowlaną",
       "url": "https://www.olx.pl/d/oferta/sprzedam-dzialke-budowlana-CID3-ID1dhEHW.html",
-      "description": "Sprzedaż · 110 000 zł · Myszków - Dzisiaj o 07:05",
+      "description": "Sprzedaż · 110 000 zł · Myszków - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:47.765165+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dzialka budowlana ,ul. Dworska , Myszków ,1200m2",
@@ -235,7 +242,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:47.764903+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Myszków Dom z potencjałem I Maja sprzedaż zamiana",
@@ -246,7 +253,7 @@
       "category": "domy",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:45.594367+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Komfortowy po remoncie, zagospodarowany ogród, na działce pomieszczenia gospodarcze",
@@ -257,18 +264,18 @@
       "category": "domy",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:45.593968+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom Jednorodzinny w Myszkowie, nowy, stan deweloperski",
       "url": "https://www.olx.pl/d/oferta/dom-jednorodzinny-w-myszkowie-nowy-stan-deweloperski-CID3-ID1cO3rA.html",
-      "description": "Sprzedaż · 625 000 zł do negocjacji · Myszków - Dzisiaj o 09:26",
+      "description": "Sprzedaż · 625 000 zł do negocjacji · Myszków - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "domy",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:45.593234+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie myszków 65m",
@@ -279,7 +286,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.638173+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie 46 mkw",
@@ -290,7 +297,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.638003+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Przestronne 3-pokojowe mieszkanie 54 m² z balkonem i piwnicą – spokojna okolica, do własnej aranżacji",
@@ -301,7 +308,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.637830+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Na sprzedaż przestronne mieszkanie 92 m² po generalnym remoncie | Garaż, działka, piwnica i duży balkon!",
@@ -312,7 +319,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.637664+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie centrum Myszkowa przy 11 Listopada",
@@ -323,7 +330,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.637494+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Kawalerka 38 m2 na sprzedaż",
@@ -334,7 +341,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.637325+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie na sprzedaż - Myszków Leśna - 48m w pełni wyposażone mieszkanie z dużą kuchnią",
@@ -345,7 +352,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.637154+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie 33m2 do remontu na sprzedaż",
@@ -356,7 +363,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.636921+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Odsprzedam Mieszkanie",
@@ -367,7 +374,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.636753+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "33 m² | osobna kuchnia | niski czynsz | Myszków Światowit",
@@ -378,40 +385,40 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.636591+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Bezpośrednio sprzedam mieszkanie w Myszkowie ul. 11 Listopada 22",
       "url": "https://www.olx.pl/d/oferta/bezposrednio-sprzedam-mieszkanie-w-myszkowie-ul-11-listopada-22-CID3-ID1bo0st.html",
-      "description": "Sprzedaż · 250 000 zł · Myszków - 28 października 2026",
+      "description": "Sprzedaż · 245 000 zł · Myszków - 28 października 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.636373+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Myszków Wyszyńskiego | 51,5 m² | Po generalnym remoncie | 2 pokoje | Balkon",
       "url": "https://www.olx.pl/d/oferta/myszkow-wyszynskiego-51-5-m-po-generalnym-remoncie-2-pokoje-balkon-CID3-ID1dgt2X.html",
-      "description": "Sprzedaż · 330 000 zł · Myszków - Odświeżono dzisiaj o 16:11",
+      "description": "Sprzedaż · 330 000 zł · Myszków - Odświeżono dnia 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.635977+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam mieszkanie M3, 50,50 m², Myszków, ul. Sikorskiego, I piętro, bez pośredników",
       "url": "https://www.olx.pl/d/oferta/sprzedam-mieszkanie-m3-50-50-m-myszkow-ul-sikorskiego-i-pietro-bez-posrednikow-CID3-ID1dbaHC.html",
-      "description": "Sprzedaż · 299 000 zł · Myszków - Odświeżono dzisiaj o 13:44",
+      "description": "Sprzedaż · 299 000 zł · Myszków - Odświeżono dnia 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:42.635782+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka inwestycyjna z budynkami Lubliniec",
@@ -422,7 +429,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.691694+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Lubliniec działka budowlana przy Kochcickiej",
@@ -433,7 +440,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.691526+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka Lubliniec",
@@ -444,7 +451,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.691348+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam działkę budowlaną w pełni uzbrojoną !",
@@ -455,7 +462,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.691181+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam działki i dom w ścisłym centrum Lublińca - 1167 m²",
@@ -466,7 +473,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.690991+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "działka budowlana w Lublińcu ( przetarg)",
@@ -477,51 +484,51 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.690612+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana w Lublińcu (przetarg)",
       "url": "https://www.olx.pl/d/oferta/dzialka-budowlana-w-lublincu-przetarg-CID3-ID1dhOB0.html",
-      "description": "Sprzedaż · 118 000 zł · Lubliniec - Dzisiaj o 10:52",
+      "description": "Sprzedaż · 118 000 zł · Lubliniec - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.690448+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana w Lublińcu (przetarg)",
       "url": "https://www.olx.pl/d/oferta/dzialka-budowlana-w-lublincu-przetarg-CID3-ID1dhOPX.html",
-      "description": "Sprzedaż · 117 000 zł · Lubliniec - Dzisiaj o 11:01",
+      "description": "Sprzedaż · 117 000 zł · Lubliniec - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.690284+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana w Lublińcu (przetarg)",
       "url": "https://www.olx.pl/d/oferta/dzialka-budowlana-w-lublincu-przetarg-CID3-ID1dhPjx.html",
-      "description": "Sprzedaż · 118 000 zł · Lubliniec - Dzisiaj o 11:06",
+      "description": "Sprzedaż · 118 000 zł · Lubliniec - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.690112+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana w Lublińcu (przetarg)",
       "url": "https://www.olx.pl/d/oferta/dzialka-budowlana-w-lublincu-przetarg-CID3-ID1dhPGj.html",
-      "description": "Sprzedaż · 118 000 zł · Lubliniec - Dzisiaj o 11:12",
+      "description": "Sprzedaż · 118 000 zł · Lubliniec - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.689934+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana w Lublińcu (przetarg)",
@@ -532,7 +539,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.689763+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana w Lublińcu (przetarg)",
@@ -543,7 +550,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.689594+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana w Lublińcu (przetarg)",
@@ -554,7 +561,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:39.689400+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom Wyszyńskiego/św. Anny",
@@ -565,7 +572,7 @@
       "category": "domy",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:37.155120+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam wolnostojący ,nowoczesny i komfortowy dom jednorodzinny w wysokim standardzie",
@@ -576,7 +583,7 @@
       "category": "domy",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:37.154832+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom wolnostojący na sprzedaż",
@@ -587,7 +594,7 @@
       "category": "domy",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:37.154483+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie sprzedam",
@@ -598,7 +605,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:35.064174+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam mieszkanie Lubliniec na ul. Świętej Anny",
@@ -609,7 +616,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:35.063747+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Komfortowe 2-pokojowe mieszkanie po generalnym remoncie | 36,9 m² | Lubliniec, ul. Wojska Polskiego 5",
@@ -620,7 +627,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:35.063194+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Narożny apartament 81–121 m² | piętro + poddasze do adaptacji | ogródek | Lubliniec, ul. Brzozowa | gotowy do odbioru | bez prowizji | od 587 000 zł",
@@ -631,7 +638,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:35.062765+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam mieszkanie",
@@ -642,7 +649,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:35.062593+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkania na sprzedaż",
@@ -653,7 +660,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:35.062420+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie M3 z balkonem Centrum - blisko Kaufland. Gotowe do zamieszkania",
@@ -664,7 +671,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:35.062129+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom jednorodzinny - stan surowy - Konopiska - Jamki",
@@ -675,7 +682,7 @@
       "category": "domy",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:30.733759+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom na sprzedaż/Konopiska/MEROSS Nieruchomości",
@@ -686,7 +693,7 @@
       "category": "domy",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:30.733568+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie M4 Błeszno",
@@ -697,7 +704,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:27.960708+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka na sprzedaż, Kłobuck",
@@ -708,7 +715,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:26.014737+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Wilkowiecko 5km Kłobuck - Działka P,U 300000m2 pod Warsztat Halę Bazę - 5 działek po 250 000 zł.",
@@ -719,7 +726,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:26.014515+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana",
@@ -730,7 +737,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:26.014215+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom Jednorodzinny spokojna okolica otoczona Lasem 95 M2",
@@ -741,7 +748,7 @@
       "category": "domy",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:23.338663+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie na sprzedaż",
@@ -752,7 +759,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:20.925362+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "M3 Kłobuck 0% PCC , ul. Rommla , 34,07m2 Pierwsze piętro",
@@ -763,18 +770,18 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:20.925193+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie na sprzedaż w Kłobucku",
       "url": "https://www.olx.pl/d/oferta/mieszkanie-na-sprzedaz-w-klobucku-CID3-ID1cmRew.html",
-      "description": "Sprzedaż · 330 000 zł · Kłobuck - Dzisiaj o 13:59",
+      "description": "Sprzedaż · 330 000 zł · Kłobuck - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:20.924817+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działki budowlane - Częstochowa Korkowa/Bakaliowa",
@@ -785,7 +792,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:17.790871+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka Częstochowa Błeszno",
@@ -796,7 +803,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:17.790251+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mirów ul. Turystyczna, świetna lokalizacja, wydane WZ, blisko centrum 710 m2 dojazd z dwóch stron działki",
@@ -807,7 +814,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:17.789969+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana Częstochowa, Wyczerpy, ul. Parkowa boczna od Sąsiedzkiej",
@@ -818,7 +825,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:17.789510+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana Błeszno/Brzeziny",
@@ -829,7 +836,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:17.789346+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Prawo własności nieruchomości gruntowej niezabudowanej położonej w Częstochowie",
@@ -840,7 +847,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:17.789129+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Piękna działka budowlana - Częstochowa ul. Bursztynowa",
@@ -851,7 +858,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:17.788902+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana blisko Olsztyna, ul. Bugajska",
@@ -862,29 +869,29 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:17.788737+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Piękna działka budowlana WARUNKI ZABUDOWY w atrakcyjnym położeniu Częstochowy przy ul. Ikara , wszystkie media, komunikacja ,sklepy szkola",
       "url": "https://www.olx.pl/d/oferta/piekna-dzialka-budowlana-warunki-zabudowy-w-atrakcyjnym-polozeniu-czestochowy-przy-ul-ikara-wszystkie-media-komunikacja-sklepy-szkola-CID3-ID1bamEq.html",
-      "description": "Sprzedaż · 285 000 zł · Częstochowa, Parkitka - Dzisiaj o 10:31",
+      "description": "Sprzedaż · 285 000 zł · Częstochowa, Parkitka - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:17.788467+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka inwestycyjna",
       "url": "https://www.olx.pl/d/oferta/dzialka-inwestycyjna-CID3-ID1bVO8z.html",
-      "description": "Sprzedaż · 4 000 000 zł · Częstochowa, Raków - Odświeżono dzisiaj o 17:39",
+      "description": "Sprzedaż · 4 000 000 zł · Częstochowa, Raków - Odświeżono dnia 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:17.787840+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Okazja! Dom dwurodzinny w cenie mieszkania, licytacja komornicza",
@@ -895,7 +902,7 @@
       "category": "domy",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:15.925360+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "70,4 m² | 3 pokoje | po remoncie | garaż + miejsce | bezpośrednio",
@@ -906,7 +913,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.860878+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Centrum Sobieskiego 2 pokoje",
@@ -917,7 +924,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.860529+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "M-2 36m² po remoncie BEZ POŚREDNIKÓW",
@@ -928,7 +935,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.859661+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "M-3,Trzech Wieszczów| Po Gen. Remoncie|Pełne wyposażenie +AGD w cenie|",
@@ -939,7 +946,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.859498+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie w centrum 52 m2 bez pośredników",
@@ -950,7 +957,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.859327+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie M4 3 pokojowe tysiaclecie",
@@ -961,18 +968,18 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.859107+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie 2-pokojowe z balkonem – Częstochowa, os.Tysiąclecia, ul. Kiedrzyńska | 37 m² | Po remoncie",
       "url": "https://www.olx.pl/d/oferta/mieszkanie-2-pokojowe-z-balkonem-czestochowa-os-tysiaclecia-ul-kiedrzynska-37-m-po-remoncie-CID3-ID1dhOro.html",
-      "description": "Sprzedaż · 275 000 zł do negocjacji · Częstochowa, Tysiąclecie - Dzisiaj o 10:50",
+      "description": "Sprzedaż · 275 000 zł do negocjacji · Częstochowa, Tysiąclecie - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.858636+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Na sprzedaż: Przestronne 3 pokoje z tarasem – 64 m² | Częstochowa, Zawodzie - Dąbie",
@@ -983,7 +990,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.858470+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Częstochowa Północ 2 pokoje z balkonem, swietna lokalizacja, zielono, bez prowizji",
@@ -994,7 +1001,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.858305+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam M-3 Armii Krajowej/ Tysiąclecie okazja!!!",
@@ -1005,40 +1012,40 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.858087+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dwupokojowe na parterze w bloku przy Łukasińskiego",
       "url": "https://www.olx.pl/d/oferta/dwupokojowe-na-parterze-w-bloku-przy-lukasinskiego-CID3-ID1dhQ7S.html",
-      "description": "Sprzedaż · 229 000 zł · Częstochowa, Raków - Dzisiaj o 11:30",
+      "description": "Sprzedaż · 229 000 zł · Częstochowa, Raków - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.857694+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie z garderobą i meblami w cenie, gotowe do wprowadzenia",
       "url": "https://www.olx.pl/d/oferta/mieszkanie-z-garderoba-i-meblami-w-cenie-gotowe-do-wprowadzenia-CID3-ID1dhIAm.html",
-      "description": "Sprzedaż · 185 000 zł · Częstochowa, Raków - Dzisiaj o 08:46",
+      "description": "Sprzedaż · 185 000 zł · Częstochowa, Raków - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.857526+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dwupokojowe na 3 piętrze przy Okólnej",
       "url": "https://www.olx.pl/d/oferta/dwupokojowe-na-3-pietrze-przy-okolnej-CID3-ID1dhQUr.html",
-      "description": "Sprzedaż · 249 000 zł · Częstochowa, Tysiąclecie - Dzisiaj o 11:37",
+      "description": "Sprzedaż · 249 000 zł · Częstochowa, Tysiąclecie - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.857362+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Centrum 3 pokoje Kopernika 1 pietro",
@@ -1049,7 +1056,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:13.856544+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam piękne mieszkanie – idealne dla rodziny lub pod inwestycję",
@@ -1060,7 +1067,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.154578+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie na Parkitce ul. Łódzka",
@@ -1071,7 +1078,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.154416+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "MIESZKANIE 60m + 20m tarasu",
@@ -1082,7 +1089,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.154250+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Kawalerka na Tysiącleciu",
@@ -1093,7 +1100,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.154078+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Nowoczesne 3-pokojowe mieszkanie z narożnym balkonem – Częstochowa, Parkitka",
@@ -1104,7 +1111,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.153900+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Na sprzedaż 3-pokojowe, w pełni umeblowane mieszkanie, 2 piętro",
@@ -1115,7 +1122,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.153734+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "sprzedam kamienicę pod Jasną Górą, oficyna",
@@ -1126,7 +1133,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.152592+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "GARAŻ ul. Curie Skłodowskiej",
@@ -1135,7 +1142,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:45.011085+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "MIESZKANIE, 59,2 m2 z piwnicą, centrum miasta, ul. Jasnogórska Cz-wa, Ip, blok cegła, po termomodernizacji, balkon, dwustronne M-4, stan dobry, dzwonić wieczorem",
@@ -1144,7 +1151,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-16T12:34:47.829267+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom Częstochowa Grabówka | Park Klonowy - pod koronami drzew I 150 m2",
@@ -1153,7 +1160,7 @@
       "query": "Otodom — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-14T06:05:46.799444+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dzień otwarty 15.11 / kawalerka z potencjałem na 2 pok / balkon / 1 piętro",
@@ -1164,7 +1171,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-13T12:11:00.945470+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom A – 169,38 m² zachodni ogród | Park Klonowy Częstochowa, Grabówka",
@@ -1173,7 +1180,7 @@
       "query": "Otodom — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-13T12:10:43.805810+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom Częstochowa Grabówka | Park Klonowy - pod koronami drzew I 150 m2",
@@ -1182,7 +1189,7 @@
       "query": "Otodom — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-13T06:17:21.561955+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "SEGMENT, 130 m2, Północ",
@@ -1191,7 +1198,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-12T12:13:27.430643+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "DZIAŁKA budowlano- rolna, 90ar, Kuchary gm. Mstów",
@@ -1200,7 +1207,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-10T18:00:14.714325+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "MIESZKANIE, 47,6 m2, ul.Sobieskiego Cz-wa",
@@ -1209,7 +1216,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-10T18:00:14.714003+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "DZIAŁKA, 1170 m2, na Jurze Krakowsko-Częstochowskiej",
@@ -1218,7 +1225,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-10T18:00:14.713708+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "NIERUCHOMOŚĆ, działka 1857 m2, Blachownia na rogu ul Częstochowskiej i Księżycowej",
@@ -1227,7 +1234,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-10T18:00:14.713396+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "DZIAŁKA, 880 m2, 898 m2, 1063 m2, Mstów - Latosówka",
@@ -1236,7 +1243,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-10T18:00:14.713072+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "DOM, działka 522 m2, 2-kondygnacyjny",
@@ -1245,7 +1252,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-10T12:05:41.363067+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "DZIAŁKI, woj. śląskie, budowlana, budowlano- inwestycyjno- produkcyjna, cena do uzgodnienia",
@@ -1254,7 +1261,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-09T18:08:26.190199+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Komfortowe mieszkanie po generalnym remoncie – centrum Myszkowa",
@@ -1265,7 +1272,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-08T06:52:47.924015+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Budowlana. Wszystkie media. W otoczeniu  nowe domy.  Dobra komunikacja.",
@@ -1276,7 +1283,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-08T06:52:46.079528+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Nieruchomość — licytacja komornicza",
@@ -1285,7 +1292,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345385+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "lokal mieszkalny o nr KW CZ1C/00145017/2",
@@ -1294,7 +1301,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345486+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom wraz działkami 25 627 m2",
@@ -1303,7 +1310,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345565+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "nieruchomość gruntowa KW CZ1C/00067472/8 (na zasadzie wspólności ustawowej majątkowej małżeńskiej)",
@@ -1312,7 +1319,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345641+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "lokal użytkowy CZ1C/00107419/2",
@@ -1321,7 +1328,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345715+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "nieruchomość gruntowa zabudowana",
@@ -1330,7 +1337,7 @@
       "query": "Licytacja — kancelaria komornicza Częstochowa",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:00.345788+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "DOM, 176 m2, działka 400 m2, ul. Papierowa Zawodzie Cz-wa, 5 pokoi, kuchnia, 2 łazienki, garaż, kostka brukowa, do remontu, możliwa zamiana na mniejszy",
@@ -1339,7 +1346,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:01.952137+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "DZIAŁKA budowlana, 935 m2, Radomsko",
@@ -1348,7 +1355,7 @@
       "query": "Pośrednik — ogłoszenie sprzedaży",
       "verified_at": null,
       "discovered_at": "2026-11-07T22:04:01.952468+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam mieszkanie",
@@ -1359,40 +1366,40 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.152034+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie 3P | 56 m² | Garaż podziemny | Okulickiego | Parkitka | Bezpośrednio",
       "url": "https://www.olx.pl/d/oferta/mieszkanie-3p-56-m-garaz-podziemny-okulickiego-parkitka-bezposrednio-CID3-ID1bmI6E.html",
-      "description": "Sprzedaż · 504 000 zł · Częstochowa, Parkitka - Odświeżono dzisiaj o 17:37",
+      "description": "Sprzedaż · 504 000 zł · Częstochowa, Parkitka - Odświeżono dnia 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.153173+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie 2P | 47,5m² | Brylantowe Osiedle | Garaż podziemny | Parkitka | Bezpośrednio",
       "url": "https://www.olx.pl/d/oferta/mieszkanie-2p-47-5m-brylantowe-osiedle-garaz-podziemny-parkitka-bezposrednio-CID3-ID1bmKEm.html",
-      "description": "Sprzedaż · 409 000 zł · Częstochowa, Parkitka - Odświeżono dzisiaj o 17:33",
+      "description": "Sprzedaż · 409 000 zł · Częstochowa, Parkitka - Odświeżono dnia 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.153339+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dwupokojowe z garderobą w apartamentowcu Aurora w dzielnicy Parkitka",
       "url": "https://www.olx.pl/d/oferta/dwupokojowe-z-garderoba-w-apartamentowcu-aurora-w-dzielnicy-parkitka-CID3-ID1dhR52.html",
-      "description": "Sprzedaż · 469 000 zł · Częstochowa, Parkitka - Dzisiaj o 11:39",
+      "description": "Sprzedaż · 469 000 zł · Częstochowa, Parkitka - 16 listopada 2026",
       "query": "OLX — ogłoszenie sprzedaży",
       "source": "OLX",
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.153555+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie na sprzedaż- 3 pokoje, 67,70 m2, Grabówka- bez pośredników",
@@ -1403,7 +1410,7 @@
       "category": "mieszkania",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:14:53.154933+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka z warunkami zabudowy",
@@ -1414,7 +1421,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:12.124471+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "sprzedam działki",
@@ -1425,7 +1432,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:12.125197+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom 400m2 z działką 3000m2 działka inwestycyjna 1 linia zabudowy",
@@ -1436,7 +1443,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:12.125546+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana 1 linia zabudowy budowlana Konwaliowa",
@@ -1447,7 +1454,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:12.125715+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana Cisie",
@@ -1458,7 +1465,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:12.125879+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Sprzedam działkę budowlana",
@@ -1469,7 +1476,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:12.126641+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka budowlana w Konopiskach",
@@ -1480,7 +1487,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:12.127524+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Działka inwestycyjna 4959 m² | Częstochowa Parkitka | Mazowiecka",
@@ -1491,7 +1498,7 @@
       "category": "dzialki",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:17.790613+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Dom z garażem, ul. Powstania Styczniowego 8",
@@ -1502,7 +1509,7 @@
       "category": "domy",
       "verified_at": null,
       "discovered_at": "2026-11-16T18:15:45.592963+00:00",
-      "last_seen_at": "2026-11-16T23:57:39.137871+00:00"
+      "last_seen_at": "2026-11-17T06:18:44.408679+00:00"
     },
     {
       "title": "Mieszkanie 49m 2 pokoje okazja 1 piętro",
@@ -2071,21 +2078,21 @@
       "last_seen_at": "2026-11-08T06:57:00.928030+00:00"
     }
   ],
-  "status": "Bezpośrednie źródła: komornik 0, kancelaria 6, Pośrednik 12. Wyszukiwarki RSS z trafieniami: 0/21. Otodom: 3, OLX: 132, BIP: 0, Gratka: 3. Nowych: 7. Weryfikuj u źródła.",
+  "status": "Bezpośrednie źródła: komornik 0, kancelaria 6, Pośrednik 12. Wyszukiwarki RSS z trafieniami: 0/21. Otodom: 3, OLX: 133, BIP: 0, Gratka: 3. Nowych: 0. Weryfikuj u źródła.",
   "source_health": {
     "queries": 21,
     "responding": 0,
-    "new": 7,
+    "new": 0,
     "direct_sources": {
       "komornik_portal": 0,
       "kancelaria_czestochowa": 6,
       "posrednik": 12,
       "otodom": 3,
-      "olx": 132,
+      "olx": 133,
       "bip_blachownia": 0,
       "gratka": 3
     },
-    "scan_completed_at": "2026-11-16T23:57:39.137871+00:00",
+    "scan_completed_at": "2026-11-17T06:18:44.408679+00:00",
     "source_errors": []
   }
 }
